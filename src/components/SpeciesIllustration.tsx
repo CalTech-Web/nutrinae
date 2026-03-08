@@ -101,7 +101,7 @@ export default function SpeciesIllustration({ species }: { species: string }) {
               className="object-contain"
               style={{
                 filter:
-                  "drop-shadow(0 6px 24px rgba(27,94,32,0.30)) drop-shadow(0 2px 8px rgba(27,94,32,0.15))",
+                  "drop-shadow(0 4px 12px rgba(0,0,0,0.10)) drop-shadow(0 1px 4px rgba(0,0,0,0.06))",
               }}
             />
 
@@ -188,7 +188,7 @@ export default function SpeciesIllustration({ species }: { species: string }) {
               fill
               className="object-contain"
               style={{
-                filter: "drop-shadow(0 4px 16px rgba(27,94,32,0.25))",
+                filter: "drop-shadow(0 3px 10px rgba(0,0,0,0.08))",
               }}
             />
             {/* Pulsing dots only */}
