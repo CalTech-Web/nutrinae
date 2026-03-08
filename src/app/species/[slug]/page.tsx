@@ -61,14 +61,14 @@ export default async function SpeciesDetailPage({ params }: { params: Promise<{ 
 
   return (
     <>
-      <section className="relative bg-dark text-white py-24 px-4 overflow-hidden">
+      <section className="relative bg-accent text-white py-24 px-4 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <Image src={species.heroImage} alt="" fill className="object-cover" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/80 to-transparent" />
-        <div className="absolute bottom-0 right-0 w-[40%] h-[40%] bg-gradient-to-tl from-accent/15 to-transparent rounded-tl-[80px]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-dark via-accent/90 to-accent-light/50" />
+        <div className="absolute bottom-0 right-0 w-[40%] h-[40%] bg-gradient-to-tl from-white/10 to-transparent rounded-tl-[80px]" />
         <div className="relative max-w-[1200px] mx-auto">
-          <Link href="/species" className="text-gray-400 hover:text-accent text-sm font-bold uppercase tracking-wide mb-6 inline-flex items-center gap-2 transition-colors">
+          <Link href="/species" className="text-white/70 hover:text-white text-sm font-bold uppercase tracking-wide mb-6 inline-flex items-center gap-2 transition-colors">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
             All Species
           </Link>
@@ -113,7 +113,7 @@ export default async function SpeciesDetailPage({ params }: { params: Promise<{ 
                   <Image src={species.heroImage} alt={species.name} fill className="object-contain" />
                 </div>
               </div>
-              <div className="bg-dark rounded-[0.3rem] p-6 text-center">
+              <div className="bg-accent rounded-[0.3rem] p-6 text-center">
                 <h3 className="text-white font-bold font-heading mb-3">Need More Information?</h3>
                 <Link href="/contact" className="bg-accent text-white px-6 py-3 rounded-[0.2rem] text-[13px] font-bold uppercase tracking-wide hover:bg-accent-light transition-colors inline-flex items-center gap-2">
                   Contact Us

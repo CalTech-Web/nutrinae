@@ -58,20 +58,20 @@ const products = [
 export default function ProductsPage() {
   return (
     <>
-      <section className="relative bg-dark text-white py-28 px-4 overflow-hidden">
+      <section className="relative bg-accent text-white py-28 px-4 overflow-hidden">
         <div className="absolute inset-0">
           <Image src="/images/about/hero-1.png" alt="" fill className="object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-dark via-accent/90 to-accent-light/50" />
         </div>
-        <div className="absolute bottom-0 right-0 w-[50%] h-[30%] bg-gradient-to-tl from-accent/15 to-transparent rounded-tl-[80px]" />
+        <div className="absolute bottom-0 right-0 w-[50%] h-[30%] bg-gradient-to-tl from-white/10 to-transparent rounded-tl-[80px]" />
         <div className="relative max-w-[1200px] mx-auto">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-[3px] bg-accent" />
-              <span className="text-accent font-bold text-sm uppercase tracking-wider">Our Solutions</span>
+              <div className="w-12 h-[3px] bg-white" />
+              <span className="text-white font-bold text-sm uppercase tracking-wider">Our Solutions</span>
             </div>
             <h1 className="text-4xl md:text-[48px] font-bold leading-[1.2] font-heading tracking-[-0.02em]">Our Products</h1>
-            <p className="text-xl text-gray-300 mt-4">Science-based natural solutions for animal nutrition</p>
+            <p className="text-xl text-white/80 mt-4">Science-based natural solutions for animal nutrition</p>
           </div>
         </div>
       </section>

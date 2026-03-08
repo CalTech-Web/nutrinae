@@ -3,20 +3,20 @@ import Image from "next/image";
 export default function CareersPage() {
   return (
     <>
-      <section className="relative bg-dark text-white py-28 px-4 overflow-hidden">
+      <section className="relative bg-accent text-white py-28 px-4 overflow-hidden">
         <div className="absolute inset-0">
           <Image src="/images/about/hero-1.png" alt="" fill className="object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-dark via-accent/90 to-accent-light/50" />
         </div>
-        <div className="absolute bottom-0 right-0 w-[50%] h-[30%] bg-gradient-to-tl from-accent/15 to-transparent rounded-tl-[80px]" />
+        <div className="absolute bottom-0 right-0 w-[50%] h-[30%] bg-gradient-to-tl from-white/10 to-transparent rounded-tl-[80px]" />
         <div className="relative max-w-[1200px] mx-auto">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-[3px] bg-accent" />
-              <span className="text-accent font-bold text-sm uppercase tracking-wider">Join Our Team</span>
+              <div className="w-12 h-[3px] bg-white" />
+              <span className="text-white font-bold text-sm uppercase tracking-wider">Join Our Team</span>
             </div>
             <h1 className="text-4xl md:text-[48px] font-bold leading-[1.2] font-heading tracking-[-0.02em]">Careers</h1>
-            <p className="text-xl text-gray-300 mt-4">Join our growing team</p>
+            <p className="text-xl text-white/80 mt-4">Join our growing team</p>
           </div>
         </div>
       </section>
@@ -72,7 +72,7 @@ export default function CareersPage() {
             </div>
 
             <div className="lg:col-span-1 space-y-6">
-              <div className="bg-dark rounded-[0.3rem] p-8">
+              <div className="bg-accent rounded-[0.3rem] p-8">
                 <h3 className="text-white font-bold font-heading text-lg mb-6">What We Offer</h3>
                 <div className="space-y-4">
                   {[
@@ -82,10 +82,10 @@ export default function CareersPage() {
                     "Competitive benefits package",
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-3">
-                      <div className="w-6 h-6 bg-accent rounded-[0.2rem] flex items-center justify-center flex-shrink-0">
+                      <div className="w-6 h-6 bg-white/20 rounded-[0.2rem] flex items-center justify-center flex-shrink-0">
                         <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                       </div>
-                      <span className="text-gray-300 text-sm font-medium">{item}</span>
+                      <span className="text-white/80 text-sm font-medium">{item}</span>
                     </div>
                   ))}
                 </div>

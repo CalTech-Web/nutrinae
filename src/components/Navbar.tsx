@@ -35,7 +35,7 @@ export default function Navbar() {
   return (
     <>
       {/* Top Accent Bar */}
-      <div className="bg-gradient-to-r from-accent to-accent-light">
+      <div className="bg-dark">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-2 flex justify-between items-center text-white text-sm font-medium">
           <div className="flex items-center gap-6">
             <a href="mailto:info@nutrinae.com" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
@@ -121,7 +121,7 @@ export default function Navbar() {
                 Contact
               </Link>
 
-              <Link href="/careers" className="ml-3 bg-dark text-white px-6 py-2.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent transition-colors">
+              <Link href="/careers" className="ml-3 bg-accent text-white px-6 py-2.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-dark transition-colors">
                 Careers
               </Link>
             </div>
@@ -178,7 +178,7 @@ export default function Navbar() {
             )}
 
             <Link href="/contact" className="block py-3 text-sm font-bold uppercase text-primary border-b border-gray-100" onClick={() => setMobileOpen(false)}>Contact</Link>
-            <Link href="/careers" className="block mt-4 bg-dark text-white text-center px-6 py-3 rounded-[0.2rem] text-sm font-bold uppercase" onClick={() => setMobileOpen(false)}>Careers</Link>
+            <Link href="/careers" className="block mt-4 bg-accent text-white text-center px-6 py-3 rounded-[0.2rem] text-sm font-bold uppercase" onClick={() => setMobileOpen(false)}>Careers</Link>
           </div>
         )}
       </nav>

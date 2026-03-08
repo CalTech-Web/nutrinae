@@ -85,37 +85,36 @@ const speciesList = [
 export default function Home() {
   return (
     <>
-      {/* Hero Section - Dark with overlay */}
-      <section className="relative bg-dark min-h-[85vh] flex items-center overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative bg-accent min-h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/images/about/hero-1.png" alt="" fill className="object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/80 to-transparent" />
+          <Image src="/images/about/hero-1.png" alt="" fill className="object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-dark via-accent/90 to-accent-light/50" />
         </div>
-        {/* Green swoosh decoration */}
-        <div className="absolute bottom-0 right-0 w-[60%] h-[40%] bg-gradient-to-tl from-accent/20 to-transparent rounded-tl-[100px]" />
+        <div className="absolute bottom-0 right-0 w-[60%] h-[40%] bg-gradient-to-tl from-white/10 to-transparent rounded-tl-[100px]" />
 
         <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-[3px] bg-accent" />
-              <span className="text-accent font-bold text-sm uppercase tracking-wider">Science. Focus. Innovation.</span>
+              <div className="w-12 h-[3px] bg-white" />
+              <span className="text-white font-bold text-sm uppercase tracking-wider">Science. Focus. Innovation.</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-[48px] font-bold text-white leading-[1.2] mb-6 font-heading tracking-[-0.02em]">
               Nutritional Solutions<br />for Animal Health
             </h1>
-            <p className="text-xl text-gray-300 mb-4 font-light">
+            <p className="text-xl text-white/90 mb-4 font-light">
               To Improve Performance And Profitability
             </p>
-            <p className="text-gray-400 leading-relaxed mb-10 max-w-lg">
+            <p className="text-white/70 leading-relaxed mb-10 max-w-lg">
               At NUTRINAE, we specialize in cutting-edge, science-based nutritional solutions
               that elevate animal health and performance through natural, high-quality ingredients.
             </p>
             <div className="flex gap-4 flex-wrap">
-              <Link href="/products" className="bg-accent text-white px-8 py-3.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent-light transition-colors inline-flex items-center gap-2">
+              <Link href="/products" className="bg-white text-accent px-8 py-3.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent-50 transition-colors inline-flex items-center gap-2">
                 Our Products
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </Link>
-              <Link href="/contact" className="border-2 border-white text-white px-8 py-3.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-white hover:text-dark transition-colors">
+              <Link href="/contact" className="border-2 border-white text-white px-8 py-3.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-white hover:text-accent transition-colors">
                 Contact Us
               </Link>
             </div>
@@ -187,7 +186,7 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-10">
-            <Link href="/products" className="bg-accent text-white px-8 py-3.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent-light transition-colors inline-flex items-center gap-2">
+            <Link href="/products" className="bg-accent text-white px-8 py-3.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-dark transition-colors inline-flex items-center gap-2">
               View All Products
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
@@ -195,15 +194,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Species Section - Dark */}
-      <section className="py-20 px-4 bg-dark relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-[40%] h-[50%] bg-gradient-to-br from-accent/10 to-transparent rounded-br-[100px]" />
+      {/* Species Section */}
+      <section className="py-20 px-4 bg-accent relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-[40%] h-[50%] bg-gradient-to-br from-white/10 to-transparent rounded-br-[100px]" />
         <div className="relative max-w-[1200px] mx-auto">
           <div className="text-center mb-14">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-8 h-[3px] bg-accent" />
-              <span className="text-accent font-bold text-sm uppercase tracking-wider">Industry Solutions</span>
-              <div className="w-8 h-[3px] bg-accent" />
+              <div className="w-8 h-[3px] bg-white" />
+              <span className="text-white font-bold text-sm uppercase tracking-wider">Industry Solutions</span>
+              <div className="w-8 h-[3px] bg-white" />
             </div>
             <h2 className="text-3xl md:text-[32px] font-bold text-white font-heading">Species We Serve</h2>
           </div>
@@ -212,12 +211,12 @@ export default function Home() {
               <Link
                 key={s.slug}
                 href={`/species/${s.slug}`}
-                className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-[0.3rem] p-6 text-center hover:bg-accent hover:border-accent transition-all"
+                className="group bg-white/15 backdrop-blur-sm border border-white/20 rounded-[0.3rem] p-6 text-center hover:bg-white hover:border-white transition-all"
               >
                 <div className="relative h-20 mb-4">
-                  <Image src={s.image} alt={s.name} fill className="object-contain group-hover:brightness-0 group-hover:invert transition-all" />
+                  <Image src={s.image} alt={s.name} fill className="object-contain group-hover:scale-105 transition-transform" />
                 </div>
-                <h3 className="font-bold text-white text-sm uppercase tracking-wide font-heading">{s.name}</h3>
+                <h3 className="font-bold text-white group-hover:text-accent text-sm uppercase tracking-wide font-heading">{s.name}</h3>
               </Link>
             ))}
           </div>
@@ -225,23 +224,23 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-4 bg-accent">
+      <section className="py-16 px-4 bg-dark">
         <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
           <div>
             <div className="text-4xl md:text-5xl font-bold font-heading mb-2">35+</div>
-            <p className="text-white/80 text-sm uppercase tracking-wide font-medium">Years Experience</p>
+            <p className="text-white/70 text-sm uppercase tracking-wide font-medium">Years Experience</p>
           </div>
           <div>
             <div className="text-4xl md:text-5xl font-bold font-heading mb-2">7</div>
-            <p className="text-white/80 text-sm uppercase tracking-wide font-medium">Product Lines</p>
+            <p className="text-white/70 text-sm uppercase tracking-wide font-medium">Product Lines</p>
           </div>
           <div>
             <div className="text-4xl md:text-5xl font-bold font-heading mb-2">5</div>
-            <p className="text-white/80 text-sm uppercase tracking-wide font-medium">Species Served</p>
+            <p className="text-white/70 text-sm uppercase tracking-wide font-medium">Species Served</p>
           </div>
           <div>
             <div className="text-4xl md:text-5xl font-bold font-heading mb-2">7</div>
-            <p className="text-white/80 text-sm uppercase tracking-wide font-medium">Industry Affiliations</p>
+            <p className="text-white/70 text-sm uppercase tracking-wide font-medium">Industry Affiliations</p>
           </div>
         </div>
       </section>
@@ -249,18 +248,18 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-[1200px] mx-auto">
-          <div className="bg-dark rounded-[0.3rem] p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[50%] h-full bg-gradient-to-l from-accent/10 to-transparent" />
+          <div className="bg-accent rounded-[0.3rem] p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[50%] h-full bg-gradient-to-l from-white/10 to-transparent" />
             <div className="relative">
               <h2 className="text-3xl md:text-[32px] font-bold text-white font-heading mb-3">
                 Ready to Elevate Your Program?
               </h2>
-              <p className="text-gray-400 max-w-lg">
+              <p className="text-white/70 max-w-lg">
                 With more than 35 years of experience in nutrition, health, and genetics, the NUTRINAE
                 team is well positioned to help your operations maximize performance.
               </p>
             </div>
-            <Link href="/contact" className="relative bg-accent text-white px-10 py-4 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent-light transition-colors whitespace-nowrap inline-flex items-center gap-2 flex-shrink-0">
+            <Link href="/contact" className="relative bg-white text-accent px-10 py-4 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent-50 transition-colors whitespace-nowrap inline-flex items-center gap-2 flex-shrink-0">
               Get In Touch
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>

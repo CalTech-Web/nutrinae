@@ -123,21 +123,21 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
   return (
     <>
-      <section className="relative bg-dark text-white py-24 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-dark to-dark/90" />
-        <div className="absolute bottom-0 right-0 w-[40%] h-[40%] bg-gradient-to-tl from-accent/15 to-transparent rounded-tl-[80px]" />
+      <section className="relative bg-accent text-white py-24 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-dark via-accent/90 to-accent-light/50" />
+        <div className="absolute bottom-0 right-0 w-[40%] h-[40%] bg-gradient-to-tl from-white/10 to-transparent rounded-tl-[80px]" />
         <div className="relative max-w-[1200px] mx-auto">
-          <Link href="/products" className="text-gray-400 hover:text-accent text-sm font-bold uppercase tracking-wide mb-6 inline-flex items-center gap-2 transition-colors">
+          <Link href="/products" className="text-white/70 hover:text-white text-sm font-bold uppercase tracking-wide mb-6 inline-flex items-center gap-2 transition-colors">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
             All Products
           </Link>
           <div className="flex items-start justify-between flex-wrap gap-6">
             <div>
               <h1 className="text-4xl md:text-[48px] font-bold leading-[1.2] font-heading tracking-[-0.02em] text-white">{product.name}</h1>
-              <p className="text-gray-400 text-lg mt-3 max-w-xl">{product.tagline}</p>
+              <p className="text-white/70 text-lg mt-3 max-w-xl">{product.tagline}</p>
             </div>
             {product.badge && (
-              <span className="bg-accent text-white text-[12px] font-bold uppercase px-4 py-2 rounded-[0.2rem] tracking-wide">
+              <span className="bg-white text-accent text-[12px] font-bold uppercase px-4 py-2 rounded-[0.2rem] tracking-wide">
                 {product.badge}
               </span>
             )}
@@ -199,7 +199,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   </div>
                 </div>
               )}
-              <div className="bg-dark rounded-[0.3rem] p-6 text-center">
+              <div className="bg-accent rounded-[0.3rem] p-6 text-center">
                 <h3 className="text-white font-bold font-heading mb-3">Interested in {product.name}?</h3>
                 <Link href="/contact" className="bg-accent text-white px-6 py-3 rounded-[0.2rem] text-[13px] font-bold uppercase tracking-wide hover:bg-accent-light transition-colors inline-flex items-center gap-2">
                   Request Info
