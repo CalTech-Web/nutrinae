@@ -4,13 +4,17 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-green-dark via-green-brand to-green-light text-white py-20 px-4">
-        <div className="max-w-5xl mx-auto">
+      <section className="relative bg-navy text-white py-24 px-4 overflow-hidden">
+        <div className="absolute inset-0 grid-pattern" />
+        <div className="hero-blob w-[500px] h-[500px] bg-green-brand -top-40 -right-40" />
+        <div className="hero-blob w-[400px] h-[400px] bg-green-dark -bottom-32 -left-32" />
+        <div className="hero-blob w-[250px] h-[250px] bg-green-light top-1/2 left-1/3" />
+        <div className="relative max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-[1fr_280px] gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <p className="text-green-100/80 font-medium text-sm uppercase tracking-wider mb-3">Our Story</p>
+            <div className="text-center lg:text-left animate-fade-in-up">
+              <p className="text-green-light font-medium text-sm uppercase tracking-widest mb-3">Our Story</p>
               <h1 className="text-4xl md:text-5xl font-bold mb-4">About NutriNae</h1>
-              <p className="text-lg text-green-100/90 leading-relaxed">
+              <p className="text-lg text-gray-300 leading-relaxed">
                 Science-based natural solutions backed by more than 35 years of experience in nutrition, health, and genetics.
               </p>
             </div>
@@ -20,7 +24,7 @@ export default function AboutPage() {
                 alt="Animal nutrition"
                 width={250}
                 height={300}
-                className="drop-shadow-2xl"
+                className="drop-shadow-2xl animate-float"
               />
             </div>
           </div>
@@ -75,8 +79,8 @@ export default function AboutPage() {
 
       {/* What Drives Us */}
       <section id="what-drives-us" className="py-20 px-4 bg-gray-50">
-        <div className="max-w-3xl mx-auto">
-          <p className="text-green-brand font-semibold text-sm uppercase tracking-wider mb-2">Our Purpose</p>
+        <div className="max-w-3xl mx-auto animate-fade-in-up">
+          <p className="text-green-brand font-semibold text-sm uppercase tracking-widest mb-2">Our Purpose</p>
           <h2 className="text-3xl font-bold text-navy mb-6">What Drives Us</h2>
           <p className="text-gray-600 leading-relaxed text-lg">
             We understand the growing consumer demand for reduced use of antibiotics in animal protein
@@ -91,12 +95,12 @@ export default function AboutPage() {
       <section id="our-mission" className="py-20 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-green-brand font-semibold text-sm uppercase tracking-wider mb-2">Core Principles</p>
+            <p className="text-green-brand font-semibold text-sm uppercase tracking-widest mb-2">Core Principles</p>
             <h2 className="text-3xl font-bold text-navy mb-4">Our Mission</h2>
             <p className="text-gray-500">NUTRINAE&apos;s mission is driven by three key principles:</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-8 rounded-2xl bg-green-50/50 border border-green-100/50">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
+            <div className="text-center p-8 rounded-2xl bg-green-50/50 border border-green-100/50 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] transition-all duration-300">
               <div className="w-14 h-14 bg-green-brand rounded-xl flex items-center justify-center mx-auto mb-5">
                 <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -108,7 +112,7 @@ export default function AboutPage() {
                 with proven benefits for animal health.
               </p>
             </div>
-            <div className="text-center p-8 rounded-2xl bg-green-50/50 border border-green-100/50">
+            <div className="text-center p-8 rounded-2xl bg-green-50/50 border border-green-100/50 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] transition-all duration-300">
               <div className="w-14 h-14 bg-green-brand rounded-xl flex items-center justify-center mx-auto mb-5">
                 <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -120,7 +124,7 @@ export default function AboutPage() {
                 are both effective and cost-efficient.
               </p>
             </div>
-            <div className="text-center p-8 rounded-2xl bg-green-50/50 border border-green-100/50">
+            <div className="text-center p-8 rounded-2xl bg-green-50/50 border border-green-100/50 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] transition-all duration-300">
               <div className="w-14 h-14 bg-green-brand rounded-xl flex items-center justify-center mx-auto mb-5">
                 <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -140,14 +144,14 @@ export default function AboutPage() {
       <section id="affiliations" className="py-20 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-green-brand font-semibold text-sm uppercase tracking-wider mb-2">Industry Partnerships</p>
+            <p className="text-green-brand font-semibold text-sm uppercase tracking-widest mb-2">Industry Partnerships</p>
             <h2 className="text-3xl font-bold text-navy mb-4">Affiliations</h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
               We are proud to support, collaborate with and be a part of leading industry organizations that
               share our dedication to science, animal health, and sustainable practices.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 stagger-children">
             {[
               { abbr: "AFIA", name: "American Feed Industry Association", desc: "Advocating for a thriving feed industry as a vital part of the food chain. As members, NUTRINAE stays connected with industry leaders, gaining insight into regulatory updates and best practices in feed production." },
               { abbr: "ASAS", name: "American Society of Animal Science", desc: "Advancing animal science for enhanced animal and human well-being. NUTRINAE\u2019s membership keeps the company current with animal science research and expert collaboration." },
@@ -157,7 +161,7 @@ export default function AboutPage() {
               { abbr: "PSA", name: "Poultry Science Association", desc: "Supporting scientific advancement in poultry science. Membership provides access to scientific journals, industry events, and online community resources." },
               { abbr: "TPF", name: "The Poultry Federation", desc: "Promoting the poultry and egg industries through a unified voice. TPF represents Arkansas, Missouri, and Oklahoma in advancing industry interests." },
             ].map((org) => (
-              <div key={org.abbr} className="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
+              <div key={org.abbr} className="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] transition-all duration-300">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="bg-green-brand text-white text-xs font-bold px-3 py-1 rounded-lg">{org.abbr}</span>
                   <p className="text-sm font-semibold text-navy">{org.name}</p>

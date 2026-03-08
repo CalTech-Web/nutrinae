@@ -59,49 +59,50 @@ const products = [
 export default function ProductsPage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-green-dark via-green-brand to-green-light text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-green-100/80 font-medium text-sm uppercase tracking-wider mb-3">Science-Based Solutions</p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Products</h1>
-          <p className="text-lg text-green-100/90 max-w-2xl mx-auto">
+      {/* Hero */}
+      <section className="relative bg-navy overflow-hidden py-24 lg:py-28 px-4">
+        <div className="grid-pattern absolute inset-0" />
+        <div className="hero-blob w-[500px] h-[500px] bg-green-brand -top-40 -right-40" />
+        <div className="hero-blob w-[300px] h-[300px] bg-green-dark bottom-0 left-0" />
+        <div className="max-w-4xl mx-auto text-center relative">
+          <p className="text-green-light font-medium text-sm uppercase tracking-widest mb-4">Science-Based Solutions</p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-white">Our Products</h1>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             Natural nutritional solutions backed by rigorous scientific research for optimal animal health and performance.
           </p>
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto space-y-6">
-          {products.map((product, index) => (
+      {/* Products List */}
+      <section className="py-20 lg:py-28 px-4 bg-white">
+        <div className="max-w-5xl mx-auto space-y-5 stagger-children">
+          {products.map((product) => (
             <Link
               key={product.slug}
               href={`/products/${product.slug}`}
-              className="group grid grid-cols-1 md:grid-cols-[200px_1fr] gap-8 items-center border border-gray-100 rounded-2xl p-6 md:p-8 hover:shadow-xl hover:border-green-brand/20 transition-all duration-300"
+              className="group grid grid-cols-1 md:grid-cols-[220px_1fr] gap-8 items-center rounded-2xl p-6 md:p-8 transition-all duration-300 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] border border-gray-100 hover:border-green-200"
             >
               <div className="flex justify-center">
-                <div className="relative w-40 h-40">
+                <div className="relative w-44 h-44 rounded-2xl bg-gradient-to-br from-green-50 to-gray-50 p-4 group-hover:from-green-50 group-hover:to-green-100/30 transition-colors duration-300">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-contain group-hover:scale-105 transition-transform duration-300"
+                    className="object-contain p-3 group-hover:scale-105 transition-transform duration-500"
                   />
+                  {product.badge && (
+                    <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-green-brand text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+                      {product.badge}
+                    </span>
+                  )}
                 </div>
               </div>
               <div>
-                <div className="flex items-start justify-between gap-3 mb-2">
-                  <h2 className="text-2xl font-bold text-navy group-hover:text-green-brand transition-colors">
-                    {product.name}
-                  </h2>
-                  <div className="flex gap-2 flex-shrink-0">
-                    {product.badge && (
-                      <span className="bg-green-50 text-green-brand text-xs font-bold px-3 py-1 rounded-full">
-                        {product.badge}
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <p className="text-green-brand/70 text-sm font-medium mb-3">{product.tagline}</p>
-                <p className="text-gray-500 leading-relaxed">{product.description}</p>
+                <h2 className="text-2xl font-bold text-navy group-hover:text-green-brand transition-colors mb-1">
+                  {product.name}
+                </h2>
+                <p className="text-green-brand/60 text-sm font-medium mb-3">{product.tagline}</p>
+                <p className="text-gray-400 leading-relaxed">{product.description}</p>
                 <span className="inline-flex items-center gap-1.5 text-green-brand font-semibold text-sm mt-4 group-hover:gap-3 transition-all">
                   Learn More
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -112,13 +113,13 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* Badges Section */}
+      {/* Badges */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-gray-500 text-sm mb-8">Certified and Trusted</p>
+          <p className="text-gray-400 text-sm font-medium tracking-wide mb-8 uppercase">Certified & Trusted</p>
           <div className="flex items-center justify-center gap-12">
-            <Image src="/images/badges/omri-listed.jpg" alt="OMRI Listed" width={120} height={75} className="opacity-80 hover:opacity-100 transition-opacity" />
-            <Image src="/images/badges/organic-seal.jpg" alt="USDA Organic" width={75} height={75} className="opacity-80 hover:opacity-100 transition-opacity" />
+            <Image src="/images/badges/omri-listed.jpg" alt="OMRI Listed" width={120} height={75} className="opacity-70 hover:opacity-100 transition-opacity" />
+            <Image src="/images/badges/organic-seal.jpg" alt="USDA Organic" width={75} height={75} className="opacity-70 hover:opacity-100 transition-opacity" />
           </div>
         </div>
       </section>

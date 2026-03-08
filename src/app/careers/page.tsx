@@ -3,11 +3,16 @@ import Link from "next/link";
 export default function CareersPage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-green-dark via-green-brand to-green-light text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-green-100/80 font-medium text-sm uppercase tracking-wider mb-3">Join Our Team</p>
+      {/* Hero */}
+      <section className="relative bg-navy text-white py-24 px-4 overflow-hidden">
+        <div className="absolute inset-0 grid-pattern" />
+        <div className="hero-blob w-[500px] h-[500px] bg-green-brand -top-40 -right-40" />
+        <div className="hero-blob w-[350px] h-[350px] bg-green-dark -bottom-28 -left-28" />
+        <div className="hero-blob w-[200px] h-[200px] bg-green-light top-1/3 right-1/4" />
+        <div className="relative max-w-4xl mx-auto text-center animate-fade-in-up">
+          <p className="text-green-light font-medium text-sm uppercase tracking-widest mb-3">Join Our Team</p>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Careers</h1>
-          <p className="text-lg text-green-100/90 max-w-xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-xl mx-auto">
             Help us advance animal nutrition with science-based natural solutions.
           </p>
         </div>
@@ -16,7 +21,7 @@ export default function CareersPage() {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           {/* About working here */}
-          <div className="mb-16">
+          <div className="mb-16 animate-fade-in-up">
             <h2 className="text-2xl font-bold text-navy mb-4">Why Join NutriNae</h2>
             <p className="text-gray-600 leading-relaxed">
               NUTRINAE LLC is a family-owned nutrition company that specializes in providing cutting-edge,
@@ -30,14 +35,14 @@ export default function CareersPage() {
           {/* Benefits */}
           <div className="mb-16">
             <h3 className="text-xl font-bold text-navy mb-6">What We Offer</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 stagger-children">
               {[
                 { title: "Opportunities for advancement", desc: "Grow your career in a rapidly expanding company" },
                 { title: "Openness to new ideas", desc: "Your voice and insights are valued here" },
                 { title: "New challenges & opportunities", desc: "Work on exciting projects in animal nutrition" },
                 { title: "Competitive benefits package", desc: "Comprehensive benefits to support you and your family" },
               ].map((item) => (
-                <div key={item.title} className="flex items-start gap-4 bg-green-50/50 rounded-xl p-5 border border-green-100/30">
+                <div key={item.title} className="flex items-start gap-4 bg-green-50/50 rounded-xl p-5 border border-green-100/30 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] transition-all duration-300">
                   <div className="w-8 h-8 bg-green-brand rounded-lg flex items-center justify-center flex-shrink-0">
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
@@ -54,10 +59,11 @@ export default function CareersPage() {
 
           {/* Open Positions */}
           <div className="mb-16">
+            <p className="text-green-brand font-semibold text-sm uppercase tracking-widest mb-2">Current Openings</p>
             <h2 className="text-2xl font-bold text-navy mb-2">Open Positions</h2>
             <p className="text-gray-500 text-sm mb-8">Current openings at NUTRINAE</p>
-            <div className="space-y-4">
-              <div className="border border-gray-100 rounded-2xl p-6 hover:shadow-lg hover:border-green-brand/20 transition-all">
+            <div className="space-y-4 stagger-children">
+              <div className="border border-gray-100 rounded-2xl p-6 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] hover:border-green-brand/20 transition-all duration-300">
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <div>
                     <h3 className="text-lg font-bold text-navy">Key Account Manager (Broiler)</h3>
@@ -66,12 +72,12 @@ export default function CareersPage() {
                       <span className="text-xs text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Full Time</span>
                     </div>
                   </div>
-                  <a href="mailto:jobs@nutrinae.com?subject=Application: Key Account Manager (Broiler)" className="bg-green-brand text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-green-dark transition-colors">
+                  <a href="mailto:jobs@nutrinae.com?subject=Application: Key Account Manager (Broiler)" className="bg-green-brand text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-green-dark hover:shadow-[0_8px_30px_-8px_rgba(46,125,50,0.5)] transition-all duration-300">
                     Apply Now
                   </a>
                 </div>
               </div>
-              <div className="border border-gray-100 rounded-2xl p-6 hover:shadow-lg hover:border-green-brand/20 transition-all">
+              <div className="border border-gray-100 rounded-2xl p-6 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] hover:border-green-brand/20 transition-all duration-300">
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <div>
                     <h3 className="text-lg font-bold text-navy">Key Account Manager (Layers)</h3>
@@ -80,7 +86,7 @@ export default function CareersPage() {
                       <span className="text-xs text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Full Time</span>
                     </div>
                   </div>
-                  <a href="mailto:jobs@nutrinae.com?subject=Application: Key Account Manager (Layers)" className="bg-green-brand text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-green-dark transition-colors">
+                  <a href="mailto:jobs@nutrinae.com?subject=Application: Key Account Manager (Layers)" className="bg-green-brand text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-green-dark hover:shadow-[0_8px_30px_-8px_rgba(46,125,50,0.5)] transition-all duration-300">
                     Apply Now
                   </a>
                 </div>
@@ -89,16 +95,21 @@ export default function CareersPage() {
           </div>
 
           {/* Apply CTA */}
-          <div className="bg-navy rounded-2xl p-8 lg:p-10 text-center">
-            <p className="text-gray-300 leading-relaxed mb-6">
-              If you are interested in applying for any of our roles, please submit your application/resume
-              to <a href="mailto:jobs@nutrinae.com" className="text-green-light font-semibold hover:underline">jobs@nutrinae.com</a> and
-              a member of our hiring team will review your application. Even if you don&apos;t feel like your
-              qualifications match, please don&apos;t hesitate to apply.
-            </p>
-            <a href="mailto:jobs@nutrinae.com" className="bg-green-brand text-white px-10 py-3.5 rounded-full font-semibold hover:bg-green-light transition-colors text-sm inline-block">
-              Send Your Resume
-            </a>
+          <div className="relative bg-navy rounded-2xl p-8 lg:p-10 text-center overflow-hidden">
+            <div className="absolute inset-0 grid-pattern" />
+            <div className="hero-blob w-[300px] h-[300px] bg-green-brand -top-24 -right-24" />
+            <div className="hero-blob w-[200px] h-[200px] bg-green-dark -bottom-16 -left-16" />
+            <div className="relative">
+              <p className="text-gray-300 leading-relaxed mb-6">
+                If you are interested in applying for any of our roles, please submit your application/resume
+                to <a href="mailto:jobs@nutrinae.com" className="text-green-light font-semibold hover:underline">jobs@nutrinae.com</a> and
+                a member of our hiring team will review your application. Even if you don&apos;t feel like your
+                qualifications match, please don&apos;t hesitate to apply.
+              </p>
+              <a href="mailto:jobs@nutrinae.com" className="bg-green-brand text-white px-10 py-3.5 rounded-full font-semibold hover:bg-green-light hover:shadow-[0_8px_30px_-8px_rgba(46,125,50,0.5)] transition-all duration-300 text-sm inline-block">
+                Send Your Resume
+              </a>
+            </div>
           </div>
         </div>
       </section>

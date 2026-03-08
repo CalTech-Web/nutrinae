@@ -69,24 +69,29 @@ export default async function SpeciesDetailPage({ params }: { params: Promise<{ 
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-green-dark via-green-brand to-green-light text-white py-16 lg:py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <Link href="/species" className="inline-flex items-center gap-1.5 text-green-100/70 hover:text-white text-sm mb-8 transition-colors">
+      <section className="relative bg-navy overflow-hidden py-20 lg:py-24 px-4">
+        <div className="grid-pattern absolute inset-0" />
+        <div className="hero-blob w-[500px] h-[500px] bg-green-brand -top-40 -right-40" />
+        <div className="hero-blob w-[350px] h-[350px] bg-green-dark bottom-0 left-0" />
+        <div className="hero-blob w-[300px] h-[300px] bg-green-light -bottom-40 right-1/3" />
+        <div className="max-w-6xl mx-auto relative">
+          <Link href="/species" className="inline-flex items-center gap-1.5 text-white/50 hover:text-white text-sm mb-8 transition-colors">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
             All Species
           </Link>
-          <div className="grid lg:grid-cols-[1fr_250px] gap-12 items-center">
+          <div className="grid lg:grid-cols-[1fr_280px] gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">{species.name}</h1>
-              <p className="text-green-100/80 text-lg leading-relaxed max-w-2xl">{species.intro}</p>
+              <p className="text-green-light font-medium text-sm uppercase tracking-widest mb-4">Species</p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-white">{species.name}</h1>
+              <p className="text-white/70 text-lg leading-relaxed max-w-2xl">{species.intro}</p>
             </div>
             <div className="hidden lg:flex justify-center">
               <Image
                 src={species.hero}
                 alt={species.name}
-                width={220}
-                height={280}
-                className="drop-shadow-2xl"
+                width={240}
+                height={300}
+                className="animate-float drop-shadow-2xl"
               />
             </div>
           </div>
@@ -94,37 +99,42 @@ export default async function SpeciesDetailPage({ params }: { params: Promise<{ 
       </section>
 
       {/* Products for this species */}
-      <section className="py-16 lg:py-20 px-4 bg-white">
+      <section className="py-16 lg:py-24 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           {/* Mobile species image */}
           <div className="lg:hidden flex justify-center mb-10">
-            <Image src={species.hero} alt={species.name} width={160} height={200} />
+            <Image src={species.hero} alt={species.name} width={160} height={200} className="animate-float" />
           </div>
 
           <h2 className="text-2xl font-bold text-navy mb-2">Recommended Products</h2>
-          <p className="text-gray-500 mb-8">Our full range of products can be used to support {species.name.toLowerCase()} health and performance.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
+          <p className="text-gray-400 mb-10">Our full range of products can be used to support {species.name.toLowerCase()} health and performance.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-20 stagger-children">
             {allProducts.map((p) => (
               <Link
                 key={p.slug}
                 href={`/products/${p.slug}`}
-                className="group border border-gray-100 rounded-xl p-5 hover:shadow-lg hover:border-green-brand/20 transition-all duration-300"
+                className="group relative bg-white rounded-2xl p-5 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] border border-gray-100 hover:border-green-200"
               >
-                <div className="flex justify-center mb-3">
-                  <div className="relative w-20 h-20">
-                    <Image src={p.image} alt={p.name} fill className="object-contain" />
+                {/* Product image with gradient bg */}
+                <div className="relative mb-4 rounded-xl bg-gradient-to-br from-green-50 to-gray-50 p-4 overflow-hidden group-hover:from-green-50 group-hover:to-green-100/30 transition-colors duration-300">
+                  <div className="relative w-full h-24 flex items-center justify-center">
+                    <Image src={p.image} alt={p.name} fill className="object-contain group-hover:scale-110 transition-transform duration-500" />
                   </div>
                 </div>
                 <h3 className="font-bold text-navy group-hover:text-green-brand transition-colors text-sm mb-1">
                   {p.name}
                 </h3>
-                <p className="text-xs text-gray-500 leading-relaxed">{p.desc}</p>
+                <p className="text-xs text-gray-400 leading-relaxed">{p.desc}</p>
+                <div className="mt-3 flex items-center gap-1 text-green-brand text-xs font-semibold opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                  Learn more
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </div>
               </Link>
             ))}
           </div>
 
           {/* Research */}
-          <div className="bg-green-50/50 rounded-2xl p-8 lg:p-10">
+          <div className="bg-gradient-to-br from-green-50/60 to-white rounded-2xl p-8 lg:p-10 border border-green-100/50">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-green-brand rounded-lg flex items-center justify-center">
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
@@ -137,12 +147,16 @@ export default async function SpeciesDetailPage({ params }: { params: Promise<{ 
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-2xl mx-auto text-center">
-          <h3 className="text-2xl font-bold text-navy mb-4">Need Help Choosing the Right Products?</h3>
-          <p className="text-gray-500 mb-8">Our team has 35+ years of experience in animal nutrition and can help you find the perfect solution.</p>
-          <Link href="/contact" className="bg-green-brand text-white px-10 py-3.5 rounded-full font-semibold hover:bg-green-dark transition-colors text-sm inline-block">
+      <section className="relative py-24 lg:py-28 px-4 bg-navy text-white overflow-hidden">
+        <div className="grid-pattern absolute inset-0" />
+        <div className="hero-blob w-[500px] h-[500px] bg-green-dark -bottom-60 -left-40" />
+        <div className="hero-blob w-[400px] h-[400px] bg-green-brand -top-40 -right-40" />
+        <div className="max-w-2xl mx-auto text-center relative">
+          <h3 className="text-3xl md:text-4xl font-bold mb-5">Need Help Choosing the Right Products?</h3>
+          <p className="text-white/60 mb-10 text-lg leading-relaxed">Our team has 35+ years of experience in animal nutrition and can help you find the perfect solution.</p>
+          <Link href="/contact" className="group inline-flex items-center gap-2 bg-green-brand text-white px-10 py-3.5 rounded-full font-semibold hover:bg-green-dark transition-colors text-sm">
             Contact Our Team
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </Link>
         </div>
       </section>

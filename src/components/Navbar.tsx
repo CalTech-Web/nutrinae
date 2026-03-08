@@ -72,9 +72,10 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`bg-white sticky top-0 z-50 transition-shadow ${scrolled ? "shadow-lg" : "shadow-sm"}`}>
+    <nav className={`bg-white/95 backdrop-blur-md sticky top-0 z-50 transition-all ${scrolled ? "shadow-[0_4px_30px_rgba(0,0,0,0.06)]" : ""}`}>
+      <div className="h-0.5 bg-gradient-to-r from-green-dark via-green-brand to-green-light" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 items-center">
+        <div className="flex justify-between h-[72px] items-center">
           <Link href="/" className="flex-shrink-0">
             <Image
               src="/images/logos/2025-Logo-Nutrinae-Green.png"

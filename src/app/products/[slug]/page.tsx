@@ -126,81 +126,139 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-green-dark via-green-brand to-green-light text-white py-16 lg:py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <Link href="/products" className="inline-flex items-center gap-1.5 text-green-100/70 hover:text-white text-sm mb-8 transition-colors">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+      <section className="relative bg-navy text-white py-20 lg:py-28 px-4 overflow-hidden">
+        {/* Background decorations */}
+        <div className="absolute inset-0 grid-pattern" />
+        <div className="hero-blob w-[500px] h-[500px] bg-green-brand -top-40 -right-40" />
+        <div className="hero-blob w-[350px] h-[350px] bg-green-dark bottom-0 left-0" />
+        <div className="hero-blob w-[250px] h-[250px] bg-green-light top-1/2 left-1/3" />
+
+        <div className="relative max-w-6xl mx-auto">
+          <Link
+            href="/products"
+            className="inline-flex items-center gap-1.5 text-gray-400 hover:text-white text-sm mb-10 transition-colors group"
+          >
+            <svg className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
             All Products
           </Link>
-          <div className="grid lg:grid-cols-[1fr_300px] gap-12 items-center">
-            <div>
-              <div className="flex items-center gap-3 mb-4 flex-wrap">
-                <h1 className="text-4xl md:text-5xl font-bold">{product.name}</h1>
+
+          <div className="grid lg:grid-cols-[1fr_320px] gap-12 lg:gap-16 items-center">
+            <div className="animate-fade-in-up">
+              <div className="flex items-center gap-3 mb-5 flex-wrap">
+                <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.1]">{product.name}</h1>
                 {product.badge && (
-                  <span className="bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-1.5 rounded-full">
+                  <span className="bg-white/10 backdrop-blur-sm border border-white/10 text-white text-sm font-semibold px-4 py-1.5 rounded-full">
                     {product.badge}
                   </span>
                 )}
               </div>
-              <p className="text-green-100/80 text-lg">{product.tagline}</p>
+              <p className="text-lg text-gray-400 leading-relaxed max-w-xl">{product.tagline}</p>
             </div>
-            <div className="hidden lg:flex justify-center">
-              <div className="relative w-60 h-60 bg-white/10 rounded-3xl p-4 backdrop-blur-sm">
+
+            {/* Desktop product image */}
+            <div className="hidden lg:flex justify-center relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-brand/20 to-green-dark/20 rounded-[3rem] blur-3xl" />
+              <div className="relative w-64 h-64 bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2rem] p-6 flex items-center justify-center">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-contain p-4"
+                  className="object-contain p-6 animate-float drop-shadow-2xl"
                 />
               </div>
             </div>
           </div>
         </div>
+
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
       {/* Content */}
-      <section className="py-16 lg:py-20 px-4 bg-white">
+      <section className="py-16 lg:py-24 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           {/* Mobile product image */}
-          <div className="lg:hidden flex justify-center mb-10">
-            <div className="relative w-48 h-48">
-              <Image src={product.image} alt={product.name} fill className="object-contain" />
+          <div className="lg:hidden flex justify-center mb-12">
+            <div className="relative w-52 h-52 bg-gradient-to-br from-green-50 to-gray-50 rounded-[2rem] p-4">
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                className="object-contain p-4 animate-float"
+              />
             </div>
           </div>
 
-          <p className="text-lg text-gray-600 leading-relaxed mb-12">{product.description}</p>
-
-          <h2 className="text-2xl font-bold text-navy mb-8">Key Benefits</h2>
-          <div className="space-y-4 mb-14">
-            {product.benefits.map((benefit, i) => (
-              <div key={i} className="flex items-start gap-4 bg-green-50/50 rounded-xl p-5">
-                <div className="w-8 h-8 bg-green-brand rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
-                </div>
-                <p className="text-gray-700 leading-relaxed">{benefit}</p>
-              </div>
-            ))}
+          {/* Description */}
+          <div className="animate-fade-in-up">
+            <p className="text-lg text-gray-600 leading-relaxed mb-16">{product.description}</p>
           </div>
 
+          {/* Benefits */}
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-10 h-10 bg-green-brand rounded-xl flex items-center justify-center">
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h2 className="text-2xl font-bold text-navy">Key Benefits</h2>
+            </div>
+            <div className="space-y-4 stagger-children">
+              {product.benefits.map((benefit, i) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-4 bg-gradient-to-r from-green-50/80 to-transparent rounded-xl p-5 border border-green-100/40 hover:border-green-200 hover:shadow-sm transition-all duration-300"
+                >
+                  <div className="w-8 h-8 bg-green-brand rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">{benefit}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Technical Bulletins */}
           {product.technicalBulletins && product.technicalBulletins.length > 0 && (
-            <div className="border-t border-gray-100 pt-12">
-              <h2 className="text-2xl font-bold text-navy mb-6">Technical Bulletins</h2>
-              <div className="space-y-3">
+            <div className="border-t border-gray-100 pt-14 mb-14">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-10 h-10 bg-navy rounded-xl flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <h2 className="text-2xl font-bold text-navy">Technical Bulletins</h2>
+              </div>
+              <div className="space-y-3 stagger-children">
                 {product.technicalBulletins.map((bulletin, i) => (
-                  <div key={i} className="flex items-start gap-3 text-gray-600">
-                    <svg className="w-5 h-5 text-green-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                    <p className="text-sm">{bulletin}</p>
+                  <div
+                    key={i}
+                    className="flex items-start gap-3 text-gray-600 bg-gray-50/80 rounded-lg p-4 border border-gray-100 hover:border-gray-200 transition-colors"
+                  >
+                    <svg className="w-5 h-5 text-green-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <p className="text-sm leading-relaxed">{bulletin}</p>
                   </div>
                 ))}
               </div>
             </div>
           )}
 
+          {/* Certification Badge */}
           {product.badgeImage && (
-            <div className="border-t border-gray-100 pt-12 mt-12">
-              <div className="flex items-center gap-4">
+            <div className="border-t border-gray-100 pt-12">
+              <div className="flex items-center gap-5 bg-gradient-to-r from-green-50/60 to-transparent rounded-xl p-6 border border-green-100/30">
                 <Image src={product.badgeImage} alt={product.badge || ""} width={80} height={50} className="object-contain" />
-                <p className="text-sm text-gray-500">{product.badge} certified product</p>
+                <div>
+                  <p className="text-sm font-semibold text-navy">{product.badge}</p>
+                  <p className="text-sm text-gray-500">Certified product</p>
+                </div>
               </div>
             </div>
           )}
@@ -208,12 +266,33 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-2xl mx-auto text-center">
-          <h3 className="text-2xl font-bold text-navy mb-4">Interested in {product.name}?</h3>
-          <p className="text-gray-500 mb-8">Get in touch with our team to learn more about how this product can benefit your operations.</p>
-          <Link href="/contact" className="bg-green-brand text-white px-10 py-3.5 rounded-full font-semibold hover:bg-green-dark transition-colors text-sm inline-block">
+      <section className="relative py-24 lg:py-32 px-4 bg-navy text-white overflow-hidden">
+        <div className="absolute inset-0 grid-pattern" />
+        <div className="hero-blob w-[500px] h-[500px] bg-green-dark -bottom-60 -left-40" />
+        <div className="hero-blob w-[400px] h-[400px] bg-green-brand -top-40 -right-40" />
+
+        <div className="relative max-w-2xl mx-auto text-center animate-fade-in-up">
+          <Image
+            src="/images/logos/New-NUTRINAE_Symbol.png"
+            alt=""
+            width={60}
+            height={60}
+            className="mx-auto mb-8 opacity-40"
+          />
+          <h3 className="text-3xl md:text-4xl font-bold mb-5 leading-tight">
+            Interested in {product.name}?
+          </h3>
+          <p className="text-gray-400 mb-10 text-lg leading-relaxed max-w-lg mx-auto">
+            Get in touch with our team to learn more about how this product can benefit your operations.
+          </p>
+          <Link
+            href="/contact"
+            className="group bg-green-brand text-white px-10 py-4 rounded-full font-semibold hover:bg-green-light transition-all text-sm inline-flex items-center gap-2"
+          >
             Request More Information
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </Link>
         </div>
       </section>

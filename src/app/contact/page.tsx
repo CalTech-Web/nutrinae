@@ -3,11 +3,16 @@ import Image from "next/image";
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-green-dark via-green-brand to-green-light text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-green-100/80 font-medium text-sm uppercase tracking-wider mb-3">Get In Touch</p>
+      {/* Hero */}
+      <section className="relative bg-navy text-white py-24 px-4 overflow-hidden">
+        <div className="absolute inset-0 grid-pattern" />
+        <div className="hero-blob w-[500px] h-[500px] bg-green-brand -top-40 -right-40" />
+        <div className="hero-blob w-[350px] h-[350px] bg-green-dark -bottom-28 -left-28" />
+        <div className="hero-blob w-[200px] h-[200px] bg-green-light top-1/3 left-1/4" />
+        <div className="relative max-w-4xl mx-auto text-center animate-fade-in-up">
+          <p className="text-green-light font-medium text-sm uppercase tracking-widest mb-3">Get In Touch</p>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-          <p className="text-lg text-green-100/90 max-w-xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-xl mx-auto">
             Ready to learn more about our science-based nutritional solutions? We&apos;d love to hear from you.
           </p>
         </div>
@@ -16,7 +21,7 @@ export default function ContactPage() {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-16">
           {/* Contact Info */}
-          <div>
+          <div className="animate-fade-in-up">
             <h2 className="text-2xl font-bold text-navy mb-8">Contact Information</h2>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
@@ -69,27 +74,27 @@ export default function ContactPage() {
           </div>
 
           {/* Form */}
-          <div className="bg-gray-50 rounded-2xl p-8 lg:p-10">
+          <div className="bg-white rounded-2xl p-8 lg:p-10 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.1)] border border-gray-100/80">
             <h2 className="text-2xl font-bold text-navy mb-2">Send Us a Message</h2>
             <p className="text-gray-500 text-sm mb-8">Fill out the form below and our team will get back to you.</p>
             <form className="space-y-5">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-navy mb-1.5">Name *</label>
-                <input type="text" id="name" required className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-brand/30 focus:border-green-brand transition-all" />
+                <input type="text" id="name" required className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-brand/30 focus:border-green-brand focus:bg-white transition-all" />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-navy mb-1.5">Email *</label>
-                <input type="email" id="email" required className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-brand/30 focus:border-green-brand transition-all" />
+                <input type="email" id="email" required className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-brand/30 focus:border-green-brand focus:bg-white transition-all" />
               </div>
               <div>
                 <label htmlFor="phone" className="block text-sm font-medium text-navy mb-1.5">Phone *</label>
-                <input type="tel" id="phone" required className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-brand/30 focus:border-green-brand transition-all" />
+                <input type="tel" id="phone" required className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-brand/30 focus:border-green-brand focus:bg-white transition-all" />
               </div>
               <div>
                 <label htmlFor="comments" className="block text-sm font-medium text-navy mb-1.5">Comments</label>
-                <textarea id="comments" rows={4} className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-brand/30 focus:border-green-brand transition-all resize-none" />
+                <textarea id="comments" rows={4} className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-brand/30 focus:border-green-brand focus:bg-white transition-all resize-none" />
               </div>
-              <button type="submit" className="bg-green-brand text-white px-8 py-3.5 rounded-full font-semibold hover:bg-green-dark transition-colors w-full text-sm">
+              <button type="submit" className="bg-green-brand text-white px-8 py-3.5 rounded-full font-semibold hover:bg-green-dark hover:shadow-[0_8px_30px_-8px_rgba(46,125,50,0.5)] transition-all duration-300 w-full text-sm">
                 Send Message
               </button>
             </form>
