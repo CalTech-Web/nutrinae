@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import SpeciesIllustration from "@/components/SpeciesIllustration";
 
 const speciesData: Record<string, {
   name: string;
@@ -108,10 +109,8 @@ export default async function SpeciesDetailPage({ params }: { params: Promise<{ 
             </div>
 
             <div className="lg:col-span-1">
-              <div className="bg-light-bg border border-border rounded-[0.3rem] p-6 mb-6">
-                <div className="relative h-52">
-                  <Image src={species.heroImage} alt={species.name} fill className="object-contain" />
-                </div>
+              <div className="bg-white border border-border rounded-[0.3rem] p-4 mb-6">
+                <SpeciesIllustration species={slug} />
               </div>
               <div className="bg-accent rounded-[0.3rem] p-6 text-center">
                 <h3 className="text-white font-bold font-heading mb-3">Need More Information?</h3>
