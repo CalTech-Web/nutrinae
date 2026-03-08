@@ -1,146 +1,270 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const products = [
   {
     name: "Ecodiar® Powder",
     slug: "ecodiar-powder",
-    description: "A steam distilled essential oil of the Oregano plant (Origanum vulgare ssp. hirtum) naturally selected to contain the optimum balance of phenols such as Carvacrol and Thymol.",
+    description: "Steam distilled Oregano essential oil for optimal gut health through the feed.",
+    image: "/images/products/Ecodiar-Powder-Product-Image.png",
     badge: "OMRI Listed",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+    ),
   },
   {
     name: "Ecodiar® Liquid",
     slug: "ecodiar-liquid",
-    description: "A unique combination of Oregano essential oils and an emulsifier to deliver optimal health benefits through the water.",
+    description: "Oregano essential oils and emulsifier for health benefits through drinking water.",
+    image: "/images/products/Ecodiar-Liquid-Product-Image.png",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+    ),
   },
   {
     name: "NuQuil®",
     slug: "nuquil",
-    description: "A 100% natural saponin derived from the Quillaja saponaria molina tree. Rich in triterpenoid saponins, glycol-components, tannins, antioxidants and polyphenols. No preservatives or carriers.",
+    description: "100% natural saponins from the Quillaja saponaria tree for immune support.",
+    image: "/images/products/Nuquil-Product-Image.png",
     badge: "Organic",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+    ),
   },
   {
     name: "MYKOGEO®",
     slug: "mykogeo",
-    description: "Natural hydrated magnesium aluminosilicate that has undergone a proprietary process to increase its surface area and absorption capacity.",
+    description: "Natural clay with proprietary processing for feed flow and toxin mitigation.",
+    image: "/images/products/Mykogeo-Product-Image.webp",
     badge: "OMRI Listed",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" /></svg>
+    ),
+  },
+];
+
+const challenges = [
+  {
+    title: "Gut Health Management",
+    desc: "Natural solutions to optimize gut microbiome and improve nutrient absorption.",
+    icon: (
+      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+    ),
   },
   {
-    name: "MYKOGEO® Plus",
-    slug: "mykogeo-plus",
-    description: "Natural hydrated magnesium aluminosilicate with proprietary processing, blended with organic compounds formulated to target specific fungi toxins.",
+    title: "Antibiotic Reduction",
+    desc: "Science-based alternatives to reduce or eliminate antibiotics in production.",
+    icon: (
+      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+    ),
   },
   {
-    name: "HyTann",
-    slug: "hytann",
-    description: "A 100% natural hydrolysable tannin derived from the Chestnut castanea sativa tree. Rich in tannic acid. No preservatives or carriers.",
+    title: "Toxin Risk Management",
+    desc: "Advanced clay-based solutions to mitigate mycotoxin contamination in feed.",
+    icon: (
+      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+    ),
   },
   {
-    name: "NuBA",
-    slug: "nuba",
-    description: "Coated, highly concentrated calcium butyrate. Contains at least 65% butyric acid.",
+    title: "Performance Optimization",
+    desc: "Proven feed additives to improve growth rates, feed efficiency, and overall health.",
+    icon: (
+      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+    ),
   },
 ];
 
 const speciesList = [
-  { name: "Poultry", slug: "poultry", icon: "🐔" },
-  { name: "Swine", slug: "swine", icon: "🐖" },
-  { name: "Beef", slug: "beef", icon: "🐄" },
-  { name: "Dairy", slug: "dairy", icon: "🥛" },
-  { name: "Equine", slug: "equine", icon: "🐴" },
+  { name: "Poultry", slug: "poultry", image: "/images/species/poultry-hero.png" },
+  { name: "Swine", slug: "swine", image: "/images/species/swine-hero.png" },
+  { name: "Beef", slug: "beef", image: "/images/species/beef-hero.png" },
+  { name: "Dairy", slug: "dairy", image: "/images/species/dairy-hero.png" },
+  { name: "Equine", slug: "equine", image: "/images/species/equine-hero.png" },
 ];
 
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-dark to-green-brand text-white py-24 px-4">
-        <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Nutritional Solutions for Animal Health
-          </h1>
-          <p className="text-xl md:text-2xl font-light mb-6 text-green-100">
-            To Improve Performance And Profitability
-          </p>
-          <p className="max-w-3xl mx-auto text-lg text-green-50 leading-relaxed mb-8">
-            At NUTRINAE, we specialize in providing cutting-edge, science-based nutritional solutions
-            that elevate animal health and performance. Our focus on natural, high-quality ingredients
-            ensures that we deliver effective and sustainable feed solutions.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Link href="/products" className="bg-white text-green-brand px-8 py-3 rounded-full font-semibold hover:bg-green-50 transition">
-              Our Products
-            </Link>
-            <Link href="/contact" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">
-              Contact Us
-            </Link>
+      {/* Hero Section - Dark with overlay */}
+      <section className="relative bg-dark min-h-[85vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src="/images/about/hero-1.png" alt="" fill className="object-cover opacity-30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/80 to-transparent" />
+        </div>
+        {/* Green swoosh decoration */}
+        <div className="absolute bottom-0 right-0 w-[60%] h-[40%] bg-gradient-to-tl from-accent/20 to-transparent rounded-tl-[100px]" />
+
+        <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-[3px] bg-accent" />
+              <span className="text-accent font-bold text-sm uppercase tracking-wider">Science. Focus. Innovation.</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-[48px] font-bold text-white leading-[1.2] mb-6 font-heading tracking-[-0.02em]">
+              Nutritional Solutions<br />for Animal Health
+            </h1>
+            <p className="text-xl text-gray-300 mb-4 font-light">
+              To Improve Performance And Profitability
+            </p>
+            <p className="text-gray-400 leading-relaxed mb-10 max-w-lg">
+              At NUTRINAE, we specialize in cutting-edge, science-based nutritional solutions
+              that elevate animal health and performance through natural, high-quality ingredients.
+            </p>
+            <div className="flex gap-4 flex-wrap">
+              <Link href="/products" className="bg-accent text-white px-8 py-3.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent-light transition-colors inline-flex items-center gap-2">
+                Our Products
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </Link>
+              <Link href="/contact" className="border-2 border-white text-white px-8 py-3.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-white hover:text-dark transition-colors">
+                Contact Us
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Challenges Section */}
+      <section className="py-20 px-4 bg-white relative">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="text-center mb-14">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="w-8 h-[3px] bg-accent" />
+              <span className="text-accent font-bold text-sm uppercase tracking-wider">What We Solve</span>
+              <div className="w-8 h-[3px] bg-accent" />
+            </div>
+            <h2 className="text-3xl md:text-[32px] font-bold font-heading">What Are Your Challenges?</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {challenges.map((c) => (
+              <div key={c.title} className="group bg-white border border-border rounded-[0.3rem] p-8 text-center hover:shadow-[0_5px_15px_rgba(0,0,0,0.15)] hover:border-accent transition-all">
+                <div className="w-16 h-16 bg-accent-50 rounded-full flex items-center justify-center mx-auto mb-5 text-accent group-hover:bg-accent group-hover:text-white transition-colors">
+                  {c.icon}
+                </div>
+                <h3 className="text-lg font-bold font-heading mb-3">{c.title}</h3>
+                <p className="text-body text-sm leading-relaxed">{c.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Products Section */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">Our Products</h2>
-          <p className="text-center text-gray-500 mb-12 max-w-2xl mx-auto">
-            Science-based natural solutions for optimal animal health
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="py-20 px-4 bg-light-bg">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="text-center mb-14">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="w-8 h-[3px] bg-accent" />
+              <span className="text-accent font-bold text-sm uppercase tracking-wider">Our Solutions</span>
+              <div className="w-8 h-[3px] bg-accent" />
+            </div>
+            <h2 className="text-3xl md:text-[32px] font-bold font-heading">Featured Products</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {products.map((product) => (
               <Link
                 key={product.slug}
                 href={`/products/${product.slug}`}
-                className="group border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-green-brand transition-all"
+                className="group bg-white rounded-[0.3rem] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_5px_15px_rgba(0,0,0,0.15)] transition-all"
               >
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-brand transition-colors">
-                    {product.name}
-                  </h3>
+                <div className="relative h-44 bg-white flex items-center justify-center p-4">
+                  <Image src={product.image} alt={product.name} fill className="object-contain p-4" />
                   {product.badge && (
-                    <span className="bg-green-50 text-green-brand text-xs font-semibold px-2 py-1 rounded-full">
+                    <span className="absolute top-3 right-3 bg-accent text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-[0.2rem]">
                       {product.badge}
                     </span>
                   )}
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed">{product.description}</p>
+                <div className="p-5 border-t border-gray-100">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="text-accent">{product.icon}</div>
+                    <h3 className="font-bold text-primary group-hover:text-accent transition-colors font-heading text-[15px]">
+                      {product.name}
+                    </h3>
+                  </div>
+                  <p className="text-body text-sm leading-relaxed">{product.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link href="/products" className="bg-accent text-white px-8 py-3.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent-light transition-colors inline-flex items-center gap-2">
+              View All Products
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Species Section - Dark */}
+      <section className="py-20 px-4 bg-dark relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-[40%] h-[50%] bg-gradient-to-br from-accent/10 to-transparent rounded-br-[100px]" />
+        <div className="relative max-w-[1200px] mx-auto">
+          <div className="text-center mb-14">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="w-8 h-[3px] bg-accent" />
+              <span className="text-accent font-bold text-sm uppercase tracking-wider">Industry Solutions</span>
+              <div className="w-8 h-[3px] bg-accent" />
+            </div>
+            <h2 className="text-3xl md:text-[32px] font-bold text-white font-heading">Species We Serve</h2>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5">
+            {speciesList.map((s) => (
+              <Link
+                key={s.slug}
+                href={`/species/${s.slug}`}
+                className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-[0.3rem] p-6 text-center hover:bg-accent hover:border-accent transition-all"
+              >
+                <div className="relative h-20 mb-4">
+                  <Image src={s.image} alt={s.name} fill className="object-contain group-hover:brightness-0 group-hover:invert transition-all" />
+                </div>
+                <h3 className="font-bold text-white text-sm uppercase tracking-wide font-heading">{s.name}</h3>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Species Section */}
-      <section className="py-20 px-4 bg-green-50">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">Species We Serve</h2>
-          <p className="text-center text-gray-500 mb-12">
-            Tailored nutritional solutions for every animal
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
-            {speciesList.map((s) => (
-              <Link
-                key={s.slug}
-                href={`/species/${s.slug}`}
-                className="bg-white rounded-xl p-6 text-center hover:shadow-lg hover:scale-105 transition-all"
-              >
-                <div className="text-4xl mb-3">{s.icon}</div>
-                <h3 className="font-semibold text-gray-900">{s.name}</h3>
-              </Link>
-            ))}
+      {/* Stats Section */}
+      <section className="py-16 px-4 bg-accent">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+          <div>
+            <div className="text-4xl md:text-5xl font-bold font-heading mb-2">35+</div>
+            <p className="text-white/80 text-sm uppercase tracking-wide font-medium">Years Experience</p>
+          </div>
+          <div>
+            <div className="text-4xl md:text-5xl font-bold font-heading mb-2">7</div>
+            <p className="text-white/80 text-sm uppercase tracking-wide font-medium">Product Lines</p>
+          </div>
+          <div>
+            <div className="text-4xl md:text-5xl font-bold font-heading mb-2">5</div>
+            <p className="text-white/80 text-sm uppercase tracking-wide font-medium">Species Served</p>
+          </div>
+          <div>
+            <div className="text-4xl md:text-5xl font-bold font-heading mb-2">7</div>
+            <p className="text-white/80 text-sm uppercase tracking-wide font-medium">Industry Affiliations</p>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 bg-green-brand text-white text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Ready to Elevate Your Animal Health Program?</h2>
-          <p className="text-green-100 mb-8 text-lg">
-            With more than 35 years of experience in nutrition, health, and genetics, the NUTRINAE
-            team is well positioned to help your operations maximize performance.
-          </p>
-          <Link href="/contact" className="bg-white text-green-brand px-8 py-3 rounded-full font-semibold hover:bg-green-50 transition">
-            Get In Touch
-          </Link>
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="bg-dark rounded-[0.3rem] p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[50%] h-full bg-gradient-to-l from-accent/10 to-transparent" />
+            <div className="relative">
+              <h2 className="text-3xl md:text-[32px] font-bold text-white font-heading mb-3">
+                Ready to Elevate Your Program?
+              </h2>
+              <p className="text-gray-400 max-w-lg">
+                With more than 35 years of experience in nutrition, health, and genetics, the NUTRINAE
+                team is well positioned to help your operations maximize performance.
+              </p>
+            </div>
+            <Link href="/contact" className="relative bg-accent text-white px-10 py-4 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent-light transition-colors whitespace-nowrap inline-flex items-center gap-2 flex-shrink-0">
+              Get In Touch
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </Link>
+          </div>
         </div>
       </section>
     </>
