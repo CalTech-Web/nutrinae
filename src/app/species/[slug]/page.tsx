@@ -62,6 +62,7 @@ export default async function SpeciesDetailPage({ params }: { params: Promise<{ 
 
   return (
     <>
+      {/* Hero */}
       <section className="relative bg-accent text-white py-24 px-4 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <Image src={species.heroImage} alt="" fill className="object-cover" />
@@ -77,54 +78,47 @@ export default async function SpeciesDetailPage({ params }: { params: Promise<{ 
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-white">
+      {/* Intro */}
+      <section className="py-16 px-4 bg-white">
         <div className="max-w-[1200px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2">
-              <p className="text-lg text-body leading-relaxed mb-12">{species.intro}</p>
+          <p className="text-lg text-body leading-relaxed max-w-4xl">{species.intro}</p>
+        </div>
+      </section>
 
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-[3px] bg-accent" />
-                <span className="text-accent font-bold text-sm uppercase tracking-wider">Recommended Products</span>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {allProducts.map((p) => (
-                  <Link
-                    key={p.slug}
-                    href={`/products/${p.slug}`}
-                    className="group border border-border rounded-[0.3rem] p-4 flex items-center gap-4 hover:shadow-[0_5px_15px_rgba(0,0,0,0.1)] hover:border-accent transition-all"
-                  >
-                    {p.image && (
-                      <div className="relative w-14 h-14 flex-shrink-0">
-                        <Image src={p.image} alt={p.name} fill className="object-contain" />
-                      </div>
-                    )}
-                    <div>
-                      <h3 className="font-bold text-sm group-hover:text-accent transition-colors font-heading">{p.name}</h3>
-                      <p className="text-xs text-body mt-0.5">{p.desc}</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
+      {/* Science Focus Key Visual */}
+      <SpeciesIllustration species={slug} />
 
-            <div className="lg:col-span-1">
-              <div className="bg-white border border-border rounded-[0.3rem] p-4 mb-6">
-                <SpeciesIllustration species={slug} />
-              </div>
-              <div className="bg-accent rounded-[0.3rem] p-6 text-center">
-                <h3 className="text-white font-bold font-heading mb-3">Need More Information?</h3>
-                <Link href="/contact" className="bg-accent text-white px-6 py-3 rounded-[0.2rem] text-[13px] font-bold uppercase tracking-wide hover:bg-accent-light transition-colors inline-flex items-center gap-2">
-                  Contact Us
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                </Link>
-              </div>
-            </div>
+      {/* Recommended Products */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-12 h-[3px] bg-accent" />
+            <span className="text-accent font-bold text-sm uppercase tracking-wider">Recommended Products</span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {allProducts.map((p) => (
+              <Link
+                key={p.slug}
+                href={`/products/${p.slug}`}
+                className="group border border-border rounded-[0.3rem] p-4 flex items-center gap-4 hover:shadow-[0_5px_15px_rgba(0,0,0,0.1)] hover:border-accent transition-all"
+              >
+                {p.image && (
+                  <div className="relative w-14 h-14 flex-shrink-0">
+                    <Image src={p.image} alt={p.name} fill className="object-contain" />
+                  </div>
+                )}
+                <div>
+                  <h3 className="font-bold text-sm group-hover:text-accent transition-colors font-heading">{p.name}</h3>
+                  <p className="text-xs text-body mt-0.5">{p.desc}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-light-bg">
+      {/* Research */}
+      <section className="py-16 px-4 bg-light-bg">
         <div className="max-w-[1200px] mx-auto">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-12 h-[3px] bg-accent" />
@@ -132,6 +126,18 @@ export default async function SpeciesDetailPage({ params }: { params: Promise<{ 
           </div>
           <h2 className="text-2xl font-bold font-heading mb-6">Research</h2>
           <p className="text-body leading-relaxed max-w-4xl">{species.research}</p>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 px-4 bg-accent">
+        <div className="max-w-[1200px] mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold font-heading text-white mb-4">Need More Information?</h2>
+          <p className="text-white/80 mb-8 max-w-2xl mx-auto">Our team of experts is ready to help you find the right solutions for your {species.name.toLowerCase()} operation.</p>
+          <Link href="/contact" className="bg-white text-accent px-8 py-3 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent-50 transition-colors inline-flex items-center gap-2">
+            Contact Us
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </Link>
         </div>
       </section>
     </>
