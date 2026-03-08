@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   title: "NutriNae - Nutritional Solutions for Animal Health",
   description:
     "NUTRINAE specializes in providing cutting-edge, science-based nutritional solutions that elevate animal health and performance.",
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({

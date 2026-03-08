@@ -21,7 +21,7 @@ const speciesAnnotations: Record<string, Annotation[]> = {
   poultry: [
     { label: "Immune Support", detail: "Enhanced disease resistance via beta glucans", dotX: 38, dotY: 38 },
     { label: "Feed Efficiency", detail: "Improved nutrient absorption & growth", dotX: 62, dotY: 42 },
-    { label: "Gut Health", detail: "Microbiota stabilization & intestinal integrity", dotX: 33, dotY: 62 },
+    { label: "Gut Health", detail: "Microbiota stabilization & intestinal integrity", dotX: 58, dotY: 58 },
     { label: "Pathogen Control", detail: "Natural antimicrobial targeting Salmonella", dotX: 57, dotY: 72 },
   ],
   swine: [
