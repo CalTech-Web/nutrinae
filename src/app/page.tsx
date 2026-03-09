@@ -76,11 +76,11 @@ const challenges = [
 ];
 
 const speciesList = [
-  { name: "Poultry", slug: "poultry", image: "/images/species/poultry-illustration.png", tagline: "Broilers, Layers & Turkeys" },
-  { name: "Swine", slug: "swine", image: "/images/species/swine-illustration.png", tagline: "Piglets to Mature Hogs" },
-  { name: "Beef", slug: "beef", image: "/images/species/beef-illustration.png", tagline: "Feedlot & Cow-Calf" },
-  { name: "Dairy", slug: "dairy", image: "/images/species/dairy-illustration.png", tagline: "Milk Production & Herd Health" },
-  { name: "Equine", slug: "equine", image: "/images/species/equine-illustration.png", tagline: "Performance & Wellness" },
+  { name: "Poultry", slug: "poultry", image: "/images/species/poultry-illustration.png", desc: "Enhancing poultry health and performance through scientifically formulated solutions for broilers, layers, and turkeys." },
+  { name: "Swine", slug: "swine", image: "/images/species/swine-illustration.png", desc: "Advancing swine well-being and productivity with solutions that support optimal growth and immune function." },
+  { name: "Beef", slug: "beef", image: "/images/species/beef-illustration.png", desc: "Tailored nutritional solutions to ensure your cattle receive the essential support needed for optimal growth." },
+  { name: "Dairy", slug: "dairy", image: "/images/species/dairy-illustration.png", desc: "Supporting overall dairy herd health and productivity with solutions designed for their specific needs." },
+  { name: "Equine", slug: "equine", image: "/images/species/equine-illustration.png", desc: "Specialized products to support horse health, enhance performance, and promote overall well-being." },
 ];
 
 export default function Home() {
@@ -227,37 +227,37 @@ export default function Home() {
               Tailored nutritional programs backed by science for every species.
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {speciesList.map((s) => (
               <Link
                 key={s.slug}
                 href={`/species/${s.slug}`}
-                className="group relative bg-white/10 backdrop-blur-sm border border-white/15 rounded-lg overflow-hidden hover:bg-white hover:border-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)]"
+                className="group bg-white rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] transition-all duration-300"
               >
                 {/* Image area */}
-                <div className="relative h-40 sm:h-44 bg-white/5 flex items-center justify-center p-3 overflow-hidden">
+                <div className="relative h-44 sm:h-48 bg-accent-50/50 flex items-center justify-center p-4 overflow-hidden">
                   <div className="relative w-full h-full">
                     <Image
                       src={s.image}
                       alt={s.name}
                       fill
                       className="object-contain group-hover:scale-110 transition-transform duration-500"
-                      sizes="(max-width: 640px) 50vw, 20vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                     />
                   </div>
                 </div>
                 {/* Text area */}
-                <div className="p-4 text-center">
-                  <h3 className="font-bold text-white group-hover:text-accent text-base uppercase tracking-wide font-heading transition-colors">
+                <div className="p-5 text-center">
+                  <h3 className="font-bold text-primary group-hover:text-accent text-base uppercase tracking-wide font-heading transition-colors">
                     {s.name}
                   </h3>
-                  <p className="text-white/50 group-hover:text-body text-xs mt-1 transition-colors">
-                    {s.tagline}
+                  <p className="text-body text-xs mt-2 leading-relaxed line-clamp-3">
+                    {s.desc}
                   </p>
                   {/* Arrow */}
                   <div className="mt-3 flex justify-center">
-                    <span className="w-7 h-7 rounded-full bg-white/10 group-hover:bg-accent flex items-center justify-center transition-all duration-300">
-                      <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span className="w-7 h-7 rounded-full bg-accent/10 group-hover:bg-accent flex items-center justify-center transition-all duration-300">
+                      <svg className="w-3.5 h-3.5 text-accent group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
                     </span>
