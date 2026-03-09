@@ -45,7 +45,7 @@ const allProducts = [
   { name: "Ecodiar® Powder", slug: "ecodiar-powder", desc: "Steam distilled Oregano essential oil for optimal gut health through the feed.", image: "/images/products/Ecodiar-Powder-Product-Image.png" },
   { name: "Ecodiar® Liquid", slug: "ecodiar-liquid", desc: "Oregano essential oils and emulsifier for health benefits through water.", image: "/images/products/Ecodiar-Liquid-Product-Image.png" },
   { name: "NuQuil®", slug: "nuquil", desc: "100% natural saponins from the Quillaja saponaria tree.", image: "/images/products/Nuquil-Product-Image.png" },
-  { name: "MYKOGEO®", slug: "mykogeo", desc: "Natural clay with increased surface area and absorption capacity.", image: "/images/products/Mykogeo-Product-Image.webp" },
+  { name: "MYKOGEO®", slug: "mykogeo", desc: "Natural clay with increased surface area and absorption capacity.", image: "/images/products/Mykogeo-Product-Image.png" },
   { name: "MYKOGEO® Plus", slug: "mykogeo-plus", desc: "Clay blended with organic compounds for targeted toxin mitigation.", image: "/images/products/Mykogeo-Plus-Product-Image.png" },
   { name: "HyTann", slug: "hytann", desc: "100% natural hydrolysable tannin from the Chestnut tree.", image: "/images/products/Hytann-Product-Image.png" },
   { name: "NuBA", slug: "nuba", desc: "Coated, highly concentrated calcium butyrate." },

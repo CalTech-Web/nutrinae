@@ -30,7 +30,7 @@ const products = [
     slug: "mykogeo",
     tagline: "Naturally Extracted Clay for Optimal Feed Flow and Immune System Support",
     description: "100% Attapulgite clay produced through a proprietary technology to increase its surface area and absorption capacity.",
-    image: "/images/products/Mykogeo-Product-Image.webp",
+    image: "/images/products/Mykogeo-Product-Image.png",
     badge: "OMRI Listed",
   },
   {

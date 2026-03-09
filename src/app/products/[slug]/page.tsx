@@ -69,7 +69,7 @@ const productData: Record<string, {
     tagline: "NATURALLY EXTRACTED CLAY FOR OPTIMAL FEED FLOW AND IMMUNE SYSTEM SUPPORT",
     description: "100% Attapulgite clay (natural hydrated magnesium aluminosilicate) produced through a proprietary technology to increase its surface area and absorption capacity.",
     badge: "OMRI Listed",
-    image: "/images/products/Mykogeo-Product-Image.webp",
+    image: "/images/products/Mykogeo-Product-Image.png",
     badgeImage: "/images/badges/omri-listed.jpg",
     benefits: [
       "One of the larger absorption molecules when compared to other minerals, producing drier litters in poultry and livestock animals",

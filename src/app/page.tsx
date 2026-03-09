@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import HeroSpeciesAnimation from "@/components/HeroSpeciesAnimation";
+import HeroProductSlideshow from "@/components/HeroProductSlideshow";
 
 const products = [
   {
@@ -36,7 +36,7 @@ const products = [
     name: "MYKOGEO®",
     slug: "mykogeo",
     description: "Natural clay with proprietary processing for feed flow and toxin mitigation.",
-    image: "/images/products/Mykogeo-Product-Image.webp",
+    image: "/images/products/Mykogeo-Product-Image.png",
     badge: "OMRI Listed",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" /></svg>
@@ -88,34 +88,39 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative bg-white min-h-[85vh] flex items-center overflow-hidden">
-        {/* Animated species icon slideshow */}
-        <HeroSpeciesAnimation />
-
-        <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
-          <div className="max-w-2xl">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-[3px] bg-accent" />
-              <span className="text-accent font-bold text-sm uppercase tracking-wider">Science. Focus. Innovation.</span>
+        <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+            {/* Left — Text content */}
+            <div className="flex-1 max-w-xl">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-[3px] bg-accent" />
+                <span className="text-accent font-bold text-sm uppercase tracking-wider">Science. Focus. Innovation.</span>
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-primary leading-[1.15] mb-6 font-heading tracking-[-0.02em]">
+                Nutritional Solutions<br />
+                <span className="text-accent">for Animal Health</span>
+              </h1>
+              <p className="text-xl text-accent/80 mb-4 font-medium">
+                To Improve Performance And Profitability
+              </p>
+              <p className="text-body leading-relaxed mb-10 max-w-lg">
+                At NUTRINAE, we specialize in cutting-edge, science-based nutritional solutions
+                that elevate animal health and performance through natural, high-quality ingredients.
+              </p>
+              <div className="flex gap-4 flex-wrap">
+                <Link href="/products" className="bg-accent text-white px-8 py-3.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-dark transition-colors inline-flex items-center gap-2">
+                  Our Products
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </Link>
+                <Link href="/contact" className="border-2 border-accent text-accent px-8 py-3.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent hover:text-white transition-colors">
+                  Contact Us
+                </Link>
+              </div>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-primary leading-[1.15] mb-6 font-heading tracking-[-0.02em]">
-              Nutritional Solutions<br />
-              <span className="text-accent">for Animal Health</span>
-            </h1>
-            <p className="text-xl text-accent/80 mb-4 font-medium">
-              To Improve Performance And Profitability
-            </p>
-            <p className="text-body leading-relaxed mb-10 max-w-lg">
-              At NUTRINAE, we specialize in cutting-edge, science-based nutritional solutions
-              that elevate animal health and performance through natural, high-quality ingredients.
-            </p>
-            <div className="flex gap-4 flex-wrap">
-              <Link href="/products" className="bg-accent text-white px-8 py-3.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-dark transition-colors inline-flex items-center gap-2">
-                Our Products
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </Link>
-              <Link href="/contact" className="border-2 border-accent text-accent px-8 py-3.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent hover:text-white transition-colors">
-                Contact Us
-              </Link>
+
+            {/* Right — Product slideshow */}
+            <div className="flex-1 w-full max-w-[520px]">
+              <HeroProductSlideshow />
             </div>
           </div>
         </div>
