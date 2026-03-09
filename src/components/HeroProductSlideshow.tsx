@@ -3,17 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState, useCallback } from "react";
 
-const products = [
-  { name: "Ecodiar® Powder", image: "/images/products/Ecodiar-Powder-Product-Image.png" },
-  { name: "Ecodiar® Liquid", image: "/images/products/Ecodiar-Liquid-Product-Image.png" },
-  { name: "NuQuil®", image: "/images/products/Nuquil-Product-Image.png" },
-  { name: "MYKOGEO®", image: "/images/products/Mykogeo-Product-Image.png" },
-  { name: "MYKOGEO® Plus", image: "/images/products/Mykogeo-Plus-Product-Image.png" },
-  { name: "HyTann", image: "/images/products/Hytann-Product-Image.png" },
-  { name: "NuBA", image: "/images/products/NuBA-Product-Image.png" },
-];
-
-const species = [
+const allSpecies = [
   { name: "Poultry", icon: "/images/species/poultry-icon.png" },
   { name: "Swine", icon: "/images/species/swine-icon.png" },
   { name: "Beef", icon: "/images/species/beef-icon.png" },
@@ -21,26 +11,107 @@ const species = [
   { name: "Equine", icon: "/images/species/equine-icon.png" },
 ];
 
-// Species icon positions arranged in an arc around the product (desktop)
-// Angles spread from ~200° to ~340° (bottom-left arc to bottom-right)
-const speciesPositions = [
-  { x: 12, y: 18 },   // Poultry — top-left
-  { x: 82, y: 18 },   // Swine — top-right
-  { x: 0, y: 58 },    // Beef — mid-left
-  { x: 92, y: 58 },   // Dairy — mid-right
-  { x: 46, y: 82 },   // Equine — bottom-center
+// Species indices: 0=Poultry, 1=Swine, 2=Beef, 3=Dairy, 4=Equine
+const products = [
+  {
+    name: "Ecodiar® Powder",
+    image: "/images/products/Ecodiar-Powder-Product-Image.png",
+    species: [0, 1, 2, 3, 4], // All species
+  },
+  {
+    name: "Ecodiar® Liquid",
+    image: "/images/products/Ecodiar-Liquid-Product-Image.png",
+    species: [0, 1, 2, 3], // Poultry, Swine, Beef, Dairy (no Equine per live site)
+  },
+  {
+    name: "NuQuil®",
+    image: "/images/products/Nuquil-Product-Image.png",
+    species: [0, 1, 2, 3, 4], // All species
+  },
+  {
+    name: "MYKOGEO®",
+    image: "/images/products/Mykogeo-Product-Image.png",
+    species: [0, 1, 2, 3, 4], // All species
+  },
+  {
+    name: "MYKOGEO® Plus",
+    image: "/images/products/Mykogeo-Plus-Product-Image.png",
+    species: [0, 1, 2, 3, 4], // All species
+  },
+  {
+    name: "HyTann",
+    image: "/images/products/Hytann-Product-Image.png",
+    species: [0, 1, 2, 3, 4], // All species (monogastric + ruminant)
+  },
+  {
+    name: "NuBA",
+    image: "/images/products/NuBA-Product-Image.png",
+    species: [0, 1, 2, 3, 4], // All species
+  },
 ];
 
-// Mobile positions — arranged in a tighter layout
-const mobilePositions = [
-  { x: 5, y: 10 },
-  { x: 72, y: 10 },
-  { x: -5, y: 50 },
-  { x: 82, y: 50 },
-  { x: 35, y: 80 },
+// Different position layouts per product so species icons appear in varied locations
+// Each layout is an array of {x, y} desktop positions and {mx, my} mobile positions
+const positionSets: { x: number; y: number; mx: number; my: number }[][] = [
+  // Layout 0 — arc top-heavy
+  [
+    { x: 5, y: 12, mx: 2, my: 8 },
+    { x: 80, y: 8, mx: 70, my: 5 },
+    { x: -2, y: 52, mx: -2, my: 48 },
+    { x: 88, y: 48, mx: 78, my: 45 },
+    { x: 42, y: 78, mx: 33, my: 78 },
+  ],
+  // Layout 1 — diagonal scatter
+  [
+    { x: 0, y: 20, mx: -2, my: 15 },
+    { x: 85, y: 5, mx: 72, my: 2 },
+    { x: 75, y: 55, mx: 75, my: 50 },
+    { x: 10, y: 72, mx: 5, my: 70 },
+    { x: 50, y: 82, mx: 38, my: 80 },
+  ],
+  // Layout 2 — spread wide
+  [
+    { x: -5, y: 35, mx: -5, my: 30 },
+    { x: 90, y: 30, mx: 80, my: 25 },
+    { x: 8, y: 8, mx: 5, my: 5 },
+    { x: 78, y: 75, mx: 70, my: 72 },
+    { x: 40, y: 82, mx: 30, my: 80 },
+  ],
+  // Layout 3 — cluster right
+  [
+    { x: 0, y: 15, mx: -2, my: 10 },
+    { x: 82, y: 12, mx: 72, my: 8 },
+    { x: 88, y: 45, mx: 78, my: 42 },
+    { x: -3, y: 60, mx: -5, my: 55 },
+    { x: 75, y: 75, mx: 65, my: 75 },
+  ],
+  // Layout 4 — V shape
+  [
+    { x: 42, y: 2, mx: 33, my: 0 },
+    { x: -2, y: 30, mx: -5, my: 25 },
+    { x: 88, y: 28, mx: 78, my: 22 },
+    { x: 5, y: 70, mx: 0, my: 68 },
+    { x: 82, y: 68, mx: 72, my: 65 },
+  ],
+  // Layout 5 — diamond
+  [
+    { x: 42, y: 5, mx: 33, my: 2 },
+    { x: -5, y: 42, mx: -5, my: 38 },
+    { x: 90, y: 40, mx: 80, my: 35 },
+    { x: 10, y: 75, mx: 5, my: 72 },
+    { x: 78, y: 78, mx: 68, my: 75 },
+  ],
+  // Layout 6 — zigzag
+  [
+    { x: 5, y: 5, mx: 0, my: 2 },
+    { x: 85, y: 22, mx: 75, my: 18 },
+    { x: 0, y: 45, mx: -5, my: 40 },
+    { x: 88, y: 60, mx: 78, my: 55 },
+    { x: 35, y: 80, mx: 28, my: 78 },
+  ],
 ];
 
-const delays = [0, 0.4, 0.8, 1.2, 1.6];
+const delays = [0, 0.3, 0.6, 0.9, 1.2];
 
 export default function HeroProductSlideshow() {
   const [current, setCurrent] = useState(0);
@@ -55,137 +126,121 @@ export default function HeroProductSlideshow() {
   }, []);
 
   return (
-    <div className="relative w-full h-full min-h-[420px] md:min-h-[500px]">
+    <div className="relative w-full h-full min-h-[420px] md:min-h-[520px]">
       {/* Slides */}
-      {products.map((product, i) => (
-        <div
-          key={product.name}
-          className="absolute inset-0 transition-opacity duration-[1200ms] ease-in-out"
-          style={{ opacity: i === current ? 1 : 0, pointerEvents: i === current ? "auto" : "none" }}
-        >
-          {/* Product image — centered */}
-          <div className="absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 w-[180px] h-[220px] md:w-[240px] md:h-[300px]">
-            <Image
-              src={product.image}
-              alt={product.name}
-              fill
-              className="object-contain drop-shadow-lg"
-              sizes="240px"
-            />
-          </div>
+      {products.map((product, i) => {
+        const positions = positionSets[i];
+        const productSpecies = product.species.map((si) => ({
+          ...allSpecies[si],
+          pos: positions[product.species.indexOf(si)],
+        }));
 
-          {/* Product name */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-[62%] md:top-[60%] text-center">
-            <h3 className="text-lg md:text-xl font-bold font-heading text-primary whitespace-nowrap">
-              {product.name}
-            </h3>
-            <p className="text-xs text-accent font-semibold uppercase tracking-wider mt-1">
-              For All Species
-            </p>
-          </div>
-
-          {/* SVG connecting lines (desktop only) */}
-          <svg
-            className="absolute inset-0 w-full h-full pointer-events-none hidden md:block"
-            preserveAspectRatio="none"
-            viewBox="0 0 100 100"
+        return (
+          <div
+            key={product.name}
+            className="absolute inset-0 transition-opacity duration-[1200ms] ease-in-out"
+            style={{ opacity: i === current ? 1 : 0, pointerEvents: i === current ? "auto" : "none" }}
           >
-            {speciesPositions.map((pos, si) => (
-              <line
-                key={si}
-                x1="50"
-                y1="38"
-                x2={pos.x + 4}
-                y2={pos.y + 4}
-                stroke="#2E7D32"
-                strokeWidth="0.15"
-                strokeDasharray="1 0.8"
-                opacity="0.4"
+            {/* Product image — centered, no shadow or border */}
+            <div className="absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 w-[180px] h-[220px] md:w-[240px] md:h-[300px]">
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                className="object-contain"
+                sizes="240px"
               />
+            </div>
+
+            {/* Product name */}
+            <div className="absolute left-1/2 -translate-x-1/2 top-[62%] md:top-[60%] text-center">
+              <h3 className="text-lg md:text-xl font-bold font-heading text-primary whitespace-nowrap">
+                {product.name}
+              </h3>
+            </div>
+
+            {/* Species icons with pulsing dots — desktop */}
+            {productSpecies.map((sp, si) => (
+              <div
+                key={sp.name}
+                className="absolute z-10 hidden md:flex flex-col items-center"
+                style={{
+                  left: `${sp.pos.x}%`,
+                  top: `${sp.pos.y}%`,
+                }}
+              >
+                {/* Pulsing ring */}
+                <span
+                  className="absolute rounded-full bg-accent"
+                  style={{
+                    width: 56,
+                    height: 56,
+                    top: -3,
+                    left: -3,
+                    animation: "heroPulse 2.5s cubic-bezier(0,0,0.2,1) infinite",
+                    animationDelay: `${delays[si]}s`,
+                    opacity: 0,
+                  }}
+                />
+                {/* Species icon */}
+                <div className="relative w-[50px] h-[50px] rounded-full overflow-hidden bg-white">
+                  <Image
+                    src={sp.icon}
+                    alt={sp.name}
+                    fill
+                    className="object-cover"
+                    sizes="50px"
+                  />
+                </div>
+                {/* Label */}
+                <span className="text-[10px] font-bold text-primary/70 mt-1 font-heading uppercase tracking-wide">
+                  {sp.name}
+                </span>
+              </div>
             ))}
-          </svg>
 
-          {/* Species icons with pulsing dots — desktop */}
-          {speciesPositions.map((pos, si) => (
-            <div
-              key={si}
-              className="absolute z-10 hidden md:flex flex-col items-center"
-              style={{
-                left: `${pos.x}%`,
-                top: `${pos.y}%`,
-              }}
-            >
-              {/* Pulsing ring */}
-              <span
-                className="absolute rounded-full bg-accent"
+            {/* Species icons — mobile */}
+            {productSpecies.map((sp, si) => (
+              <div
+                key={`m-${sp.name}`}
+                className="absolute z-10 md:hidden flex flex-col items-center"
                 style={{
-                  width: 56,
-                  height: 56,
-                  top: -3,
-                  left: -3,
-                  animation: "heroPulse 2.5s cubic-bezier(0,0,0.2,1) infinite",
-                  animationDelay: `${delays[si]}s`,
-                  opacity: 0,
+                  left: `${sp.pos.mx}%`,
+                  top: `${sp.pos.my}%`,
                 }}
-              />
-              {/* Species icon */}
-              <div className="relative w-[50px] h-[50px] rounded-full overflow-hidden border-2 border-accent/30 bg-white shadow-sm">
-                <Image
-                  src={species[si].icon}
-                  alt={species[si].name}
-                  fill
-                  className="object-cover"
-                  sizes="50px"
+              >
+                <span
+                  className="absolute rounded-full bg-accent"
+                  style={{
+                    width: 40,
+                    height: 40,
+                    top: -2,
+                    left: -2,
+                    animation: "heroPulse 2.5s cubic-bezier(0,0,0.2,1) infinite",
+                    animationDelay: `${delays[si]}s`,
+                    opacity: 0,
+                  }}
                 />
+                <div className="relative w-[36px] h-[36px] rounded-full overflow-hidden bg-white">
+                  <Image
+                    src={sp.icon}
+                    alt={sp.name}
+                    fill
+                    className="object-cover"
+                    sizes="36px"
+                  />
+                </div>
+                <span className="text-[8px] font-bold text-primary/60 mt-0.5 font-heading uppercase tracking-wide">
+                  {sp.name}
+                </span>
               </div>
-              {/* Label */}
-              <span className="text-[10px] font-bold text-primary/70 mt-1 font-heading uppercase tracking-wide">
-                {species[si].name}
-              </span>
-            </div>
-          ))}
+            ))}
+          </div>
+        );
+      })}
 
-          {/* Species icons — mobile */}
-          {mobilePositions.map((pos, si) => (
-            <div
-              key={`m-${si}`}
-              className="absolute z-10 md:hidden flex flex-col items-center"
-              style={{
-                left: `${pos.x}%`,
-                top: `${pos.y}%`,
-              }}
-            >
-              <span
-                className="absolute rounded-full bg-accent"
-                style={{
-                  width: 40,
-                  height: 40,
-                  top: -2,
-                  left: -2,
-                  animation: "heroPulse 2.5s cubic-bezier(0,0,0.2,1) infinite",
-                  animationDelay: `${delays[si]}s`,
-                  opacity: 0,
-                }}
-              />
-              <div className="relative w-[36px] h-[36px] rounded-full overflow-hidden border-2 border-accent/30 bg-white shadow-sm">
-                <Image
-                  src={species[si].icon}
-                  alt={species[si].name}
-                  fill
-                  className="object-cover"
-                  sizes="36px"
-                />
-              </div>
-              <span className="text-[8px] font-bold text-primary/60 mt-0.5 font-heading uppercase tracking-wide">
-                {species[si].name}
-              </span>
-            </div>
-          ))}
-        </div>
-      ))}
-
-      {/* Navigation dots */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+      {/* Navigation dots — pushed further down */}
+      <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
         {products.map((_, i) => (
           <button
             key={i}
