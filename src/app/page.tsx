@@ -268,42 +268,52 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-4 bg-dark">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
-          <div>
-            <div className="text-4xl md:text-5xl font-bold font-heading mb-2">35+</div>
-            <p className="text-white/70 text-sm uppercase tracking-wide font-medium">Years Experience</p>
-          </div>
-          <div>
-            <div className="text-4xl md:text-5xl font-bold font-heading mb-2">7</div>
-            <p className="text-white/70 text-sm uppercase tracking-wide font-medium">Product Lines</p>
-          </div>
-          <div>
-            <div className="text-4xl md:text-5xl font-bold font-heading mb-2">5</div>
-            <p className="text-white/70 text-sm uppercase tracking-wide font-medium">Species Served</p>
-          </div>
-          <div>
-            <div className="text-4xl md:text-5xl font-bold font-heading mb-2">7</div>
-            <p className="text-white/70 text-sm uppercase tracking-wide font-medium">Industry Affiliations</p>
+      <section className="py-20 px-4 bg-dark relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div className="relative max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 text-center text-white">
+            {[
+              { value: "35+", label: "Years Experience", icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> },
+              { value: "7", label: "Product Lines", icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg> },
+              { value: "5", label: "Species Served", icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> },
+              { value: "7", label: "Industry Affiliations", icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg> },
+            ].map((stat, idx) => (
+              <div key={stat.label} className={`flex flex-col items-center py-4 ${idx < 3 ? 'md:border-r md:border-white/10' : ''}`}>
+                <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center mb-4 text-accent-light">
+                  {stat.icon}
+                </div>
+                <div className="text-4xl md:text-5xl font-bold font-heading mb-1 text-white">{stat.value}</div>
+                <div className="w-8 h-[2px] bg-accent-light/50 my-2" />
+                <p className="text-white/60 text-xs uppercase tracking-widest font-medium">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-light-bg">
         <div className="max-w-[1200px] mx-auto">
-          <div className="bg-accent rounded-[0.3rem] p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[50%] h-full bg-gradient-to-l from-white/10 to-transparent" />
+          <div className="bg-gradient-to-br from-dark via-accent to-dark rounded-lg p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
+            {/* Decorative shapes */}
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3" />
+            <div className="absolute bottom-0 left-0 w-[250px] h-[250px] bg-white/5 rounded-full translate-y-1/2 -translate-x-1/3" />
+            <div className="absolute top-1/2 right-1/4 w-[150px] h-[150px] bg-white/[0.03] rounded-full" />
             <div className="relative">
-              <h2 className="text-3xl md:text-[32px] font-bold text-white font-heading mb-3">
-                Ready to Elevate Your Program?
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-[3px] bg-accent-light" />
+                <span className="text-accent-light font-bold text-xs uppercase tracking-widest">Let&apos;s Work Together</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white font-heading mb-4 leading-tight">
+                Ready to Elevate<br className="hidden sm:block" /> Your Program?
               </h2>
-              <p className="text-white/70 max-w-lg">
+              <p className="text-white/80 max-w-lg leading-relaxed">
                 With more than 35 years of experience in nutrition, health, and genetics, the NUTRINAE
                 team is well positioned to help your operations maximize performance.
               </p>
             </div>
-            <Link href="/contact" className="relative bg-white text-accent px-10 py-4 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent-50 transition-colors whitespace-nowrap inline-flex items-center gap-2 flex-shrink-0">
+            <Link href="/contact" className="relative bg-white text-dark px-10 py-4 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent-light hover:text-dark transition-all duration-300 whitespace-nowrap inline-flex items-center gap-3 flex-shrink-0 shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_6px_30px_rgba(0,0,0,0.3)] hover:-translate-y-0.5">
               Get In Touch
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
