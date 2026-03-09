@@ -31,42 +31,60 @@ export default function HeroSpeciesAnimation() {
   }, []);
 
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      {slides.map((slide, i) => (
-        <div
-          key={i}
-          className="absolute inset-0 transition-opacity duration-[1500ms] ease-in-out"
-          style={{ opacity: i === current ? 1 : 0 }}
-        >
-          {/* Large — top-left area */}
-          <div className="absolute top-[8%] left-[50%] md:left-[45%] w-[220px] h-[220px] md:w-[320px] md:h-[320px]">
-            <Image
-              src={speciesIcons[slide.large]}
-              alt=""
-              fill
-              className="object-contain"
-            />
+    <>
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {slides.map((slide, i) => (
+          <div
+            key={i}
+            className="absolute inset-0 transition-opacity duration-[1500ms] ease-in-out"
+            style={{ opacity: i === current ? 0.8 : 0 }}
+          >
+            {/* Large — top-right area */}
+            <div
+              className="absolute top-[8%] left-[50%] md:left-[45%] w-[220px] h-[220px] md:w-[320px] md:h-[320px]"
+              style={{ animation: "heroFloat 6s ease-in-out infinite" }}
+            >
+              <Image
+                src={speciesIcons[slide.large]}
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
+            {/* Medium — bottom-right */}
+            <div
+              className="absolute top-[48%] left-[65%] md:left-[62%] w-[160px] h-[160px] md:w-[240px] md:h-[240px]"
+              style={{ animation: "heroFloat 7s ease-in-out 1s infinite" }}
+            >
+              <Image
+                src={speciesIcons[slide.medium]}
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
+            {/* Small — bottom-left */}
+            <div
+              className="absolute top-[55%] left-[42%] md:left-[38%] w-[110px] h-[110px] md:w-[160px] md:h-[160px]"
+              style={{ animation: "heroFloat 5s ease-in-out 0.5s infinite" }}
+            >
+              <Image
+                src={speciesIcons[slide.small]}
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
           </div>
-          {/* Medium — bottom-right */}
-          <div className="absolute top-[48%] left-[65%] md:left-[62%] w-[160px] h-[160px] md:w-[240px] md:h-[240px]">
-            <Image
-              src={speciesIcons[slide.medium]}
-              alt=""
-              fill
-              className="object-contain"
-            />
-          </div>
-          {/* Small — bottom-left */}
-          <div className="absolute top-[55%] left-[42%] md:left-[38%] w-[110px] h-[110px] md:w-[160px] md:h-[160px]">
-            <Image
-              src={speciesIcons[slide.small]}
-              alt=""
-              fill
-              className="object-contain"
-            />
-          </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+
+      <style>{`
+        @keyframes heroFloat {
+          0%, 100% { transform: translateY(0) scale(1); }
+          50% { transform: translateY(-10px) scale(1.03); }
+        }
+      `}</style>
+    </>
   );
 }
