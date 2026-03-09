@@ -212,18 +212,16 @@ export default function Home() {
       </section>
 
       {/* Species Section */}
-      <section className="py-20 px-4 bg-accent relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-[40%] h-[50%] bg-gradient-to-br from-white/10 to-transparent rounded-br-[100px]" />
-        <div className="absolute bottom-0 right-0 w-[30%] h-[40%] bg-gradient-to-tl from-white/5 to-transparent rounded-tl-[80px]" />
+      <section className="py-20 px-4 bg-white relative overflow-hidden">
         <div className="relative max-w-[1200px] mx-auto">
           <div className="text-center mb-14">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-8 h-[3px] bg-white" />
-              <span className="text-white font-bold text-sm uppercase tracking-wider">Industry Solutions</span>
-              <div className="w-8 h-[3px] bg-white" />
+              <div className="w-8 h-[3px] bg-accent" />
+              <span className="text-accent font-bold text-sm uppercase tracking-wider">Industry Solutions</span>
+              <div className="w-8 h-[3px] bg-accent" />
             </div>
-            <h2 className="text-3xl md:text-[32px] font-bold text-white font-heading">Species We Serve</h2>
-            <p className="text-white/60 mt-3 max-w-xl mx-auto">
+            <h2 className="text-3xl md:text-[32px] font-bold font-heading">Species We Serve</h2>
+            <p className="text-body mt-3 max-w-xl mx-auto">
               Tailored nutritional programs backed by science for every species.
             </p>
           </div>
@@ -232,7 +230,7 @@ export default function Home() {
               <Link
                 key={s.slug}
                 href={`/species/${s.slug}`}
-                className="group bg-white rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] transition-all duration-300"
+                className="group bg-white border border-border rounded-lg overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06)] hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(46,125,50,0.15)] hover:border-accent/30 transition-all duration-300"
               >
                 {/* Image area */}
                 <div className="relative h-44 sm:h-48 bg-accent-50/50 flex items-center justify-center p-4 overflow-hidden">
