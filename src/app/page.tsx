@@ -296,16 +296,16 @@ export default function Home() {
       <section className="py-20 px-4 bg-light-bg">
         <div className="max-w-[1200px] mx-auto">
           <div className="bg-gradient-to-br from-dark via-accent to-dark rounded-lg p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
-            {/* Decorative shapes */}
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3" />
-            <div className="absolute bottom-0 left-0 w-[250px] h-[250px] bg-white/5 rounded-full translate-y-1/2 -translate-x-1/3" />
-            <div className="absolute top-1/2 right-1/4 w-[150px] h-[150px] bg-white/[0.03] rounded-full" />
+            {/* Decorative favicon watermarks */}
+            <Image src="/images/logos/favicon.webp" alt="" width={300} height={300} className="absolute -top-10 -right-10 opacity-[0.06] pointer-events-none select-none" aria-hidden="true" />
+            <Image src="/images/logos/favicon.webp" alt="" width={180} height={180} className="absolute -bottom-8 -left-8 opacity-[0.04] pointer-events-none select-none" aria-hidden="true" />
+            <Image src="/images/logos/favicon.webp" alt="" width={120} height={120} className="absolute top-1/2 right-1/4 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none" aria-hidden="true" />
             <div className="relative">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-[3px] bg-accent-light" />
                 <span className="text-accent-light font-bold text-xs uppercase tracking-widest">Let&apos;s Work Together</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white font-heading mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold !text-white font-heading mb-4 leading-tight">
                 Ready to Elevate<br className="hidden sm:block" /> Your Program?
               </h2>
               <p className="text-white/80 max-w-lg leading-relaxed">

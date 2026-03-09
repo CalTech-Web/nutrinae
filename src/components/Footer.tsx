@@ -78,7 +78,7 @@ export default function Footer() {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-wrap justify-between items-center text-sm text-white/50">
           <p>&copy; 2026 NUTRINAE LLC. All rights reserved.</p>
           <p>
-            Designed by{" "}
+            Built by{" "}
             <a href="https://caltechweb.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors">
               CalTech Web
             </a>
