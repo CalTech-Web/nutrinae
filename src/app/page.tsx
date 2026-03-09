@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import HeroSpeciesAnimation from "@/components/HeroSpeciesAnimation";
 
 const products = [
   {
@@ -87,56 +88,8 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative bg-white min-h-[85vh] flex items-center overflow-hidden">
-        {/* Animated floating species icons */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Large — poultry, top-right */}
-          <div className="species-float-1 absolute top-[5%] right-[2%] w-[180px] h-[180px] md:w-[260px] md:h-[260px] opacity-[0.12]">
-            <Image src="/images/species/poultry-hero.png" alt="" fill className="object-contain" />
-          </div>
-          {/* Medium — swine, right-center */}
-          <div className="species-float-2 absolute top-[40%] right-[8%] w-[140px] h-[140px] md:w-[190px] md:h-[190px] opacity-[0.10]">
-            <Image src="/images/species/swine-hero.png" alt="" fill className="object-contain" />
-          </div>
-          {/* Small — beef, bottom-right */}
-          <div className="species-float-3 absolute bottom-[8%] right-[15%] w-[100px] h-[100px] md:w-[140px] md:h-[140px] opacity-[0.10]">
-            <Image src="/images/species/beef-hero.png" alt="" fill className="object-contain" />
-          </div>
-          {/* Medium — dairy, bottom-center */}
-          <div className="species-float-4 absolute bottom-[5%] right-[38%] w-[110px] h-[110px] md:w-[160px] md:h-[160px] opacity-[0.08]">
-            <Image src="/images/species/dairy-hero.png" alt="" fill className="object-contain" />
-          </div>
-          {/* Small — equine, top-center-right */}
-          <div className="species-float-5 absolute top-[15%] right-[32%] w-[90px] h-[90px] md:w-[120px] md:h-[120px] opacity-[0.09]">
-            <Image src="/images/species/equine-hero.png" alt="" fill className="object-contain" />
-          </div>
-          {/* Tiny — poultry icon, mid-left area */}
-          <div className="species-float-6 absolute top-[55%] left-[55%] w-[70px] h-[70px] md:w-[90px] md:h-[90px] opacity-[0.07]">
-            <Image src="/images/species/poultry-icon.png" alt="" fill className="object-contain" />
-          </div>
-          {/* Small — swine icon, upper area */}
-          <div className="species-float-7 absolute top-[8%] right-[50%] w-[60px] h-[60px] md:w-[80px] md:h-[80px] opacity-[0.06]">
-            <Image src="/images/species/swine-icon.png" alt="" fill className="object-contain" />
-          </div>
-          {/* Tiny — beef icon, lower-left */}
-          <div className="species-float-8 absolute bottom-[20%] left-[48%] w-[55px] h-[55px] md:w-[75px] md:h-[75px] opacity-[0.07]">
-            <Image src="/images/species/beef-icon.png" alt="" fill className="object-contain" />
-          </div>
-          {/* Medium — equine, far right */}
-          <div className="species-float-9 absolute top-[65%] right-[0%] w-[120px] h-[120px] md:w-[170px] md:h-[170px] opacity-[0.08]">
-            <Image src="/images/species/equine-hero.png" alt="" fill className="object-contain" />
-          </div>
-          {/* Tiny — dairy icon */}
-          <div className="species-float-10 absolute top-[30%] right-[22%] w-[50px] h-[50px] md:w-[70px] md:h-[70px] opacity-[0.06]">
-            <Image src="/images/species/dairy-icon.png" alt="" fill className="object-contain" />
-          </div>
-          {/* Small — poultry, bottom far-right */}
-          <div className="species-float-11 absolute bottom-[30%] right-[28%] w-[65px] h-[65px] md:w-[95px] md:h-[95px] opacity-[0.07]">
-            <Image src="/images/species/poultry-icon.png" alt="" fill className="object-contain" />
-          </div>
-
-          {/* Soft bottom-right gradient */}
-          <div className="absolute bottom-0 right-0 w-[50%] h-[35%] bg-gradient-to-tl from-accent/[0.03] to-transparent rounded-tl-[80px]" />
-        </div>
+        {/* Animated species icon slideshow */}
+        <HeroSpeciesAnimation />
 
         <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
           <div className="max-w-2xl">
