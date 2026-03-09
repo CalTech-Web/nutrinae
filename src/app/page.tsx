@@ -293,31 +293,28 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-light-bg">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="bg-gradient-to-br from-dark via-accent to-dark rounded-lg p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
-            {/* Decorative favicon watermarks */}
-            <Image src="/images/logos/favicon.webp" alt="" width={300} height={300} className="absolute -top-10 -right-10 opacity-[0.06] pointer-events-none select-none" aria-hidden="true" />
-            <Image src="/images/logos/favicon.webp" alt="" width={180} height={180} className="absolute -bottom-8 -left-8 opacity-[0.04] pointer-events-none select-none" aria-hidden="true" />
-            <Image src="/images/logos/favicon.webp" alt="" width={120} height={120} className="absolute top-1/2 right-1/4 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none" aria-hidden="true" />
-            <div className="relative">
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-[3px] bg-accent-light" />
-                <span className="text-accent-light font-bold text-xs uppercase tracking-widest">Let&apos;s Work Together</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold !text-white font-heading mb-4 leading-tight">
-                Ready to Elevate<br className="hidden sm:block" /> Your Program?
-              </h2>
-              <p className="text-white/80 max-w-lg leading-relaxed">
-                With more than 35 years of experience in nutrition, health, and genetics, the NUTRINAE
-                team is well positioned to help your operations maximize performance.
-              </p>
-            </div>
-            <Link href="/contact" className="relative bg-white text-dark px-10 py-4 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent-light hover:text-dark transition-all duration-300 whitespace-nowrap inline-flex items-center gap-3 flex-shrink-0 shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_6px_30px_rgba(0,0,0,0.3)] hover:-translate-y-0.5">
-              Get In Touch
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </Link>
-          </div>
+      <section className="relative py-24 px-4 bg-gradient-to-b from-accent to-dark overflow-hidden">
+        {/* Diamond pattern overlay */}
+        <div className="absolute inset-0 opacity-[0.06]" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 20L20 40L0 20Z' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E")`,
+          backgroundSize: '40px 40px',
+        }} />
+        {/* Favicon watermarks */}
+        <Image src="/images/logos/favicon.webp" alt="" width={250} height={250} className="absolute -top-8 -right-8 opacity-[0.05] pointer-events-none select-none" aria-hidden="true" />
+        <Image src="/images/logos/favicon.webp" alt="" width={150} height={150} className="absolute -bottom-6 -left-6 opacity-[0.04] pointer-events-none select-none" aria-hidden="true" />
+        <div className="relative max-w-[700px] mx-auto text-center">
+          <span className="text-accent-light font-bold text-sm uppercase tracking-widest mb-4 block">Let&apos;s Work Together</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold !text-white font-heading mb-5 leading-tight">
+            Ready to Elevate Your Program?
+          </h2>
+          <p className="text-white/80 max-w-xl mx-auto leading-relaxed mb-10">
+            With more than 35 years of experience in nutrition, health, and genetics, the NUTRINAE
+            team is well positioned to help your operations maximize performance.
+          </p>
+          <Link href="/contact" className="bg-white text-dark px-10 py-4 rounded-full text-[14px] font-bold uppercase tracking-wide hover:bg-accent-light hover:text-dark transition-all duration-300 inline-flex items-center gap-3 shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_6px_30px_rgba(0,0,0,0.3)] hover:-translate-y-0.5">
+            Get In Touch
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </Link>
         </div>
       </section>
     </>

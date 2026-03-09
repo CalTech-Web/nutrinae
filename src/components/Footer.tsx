@@ -27,7 +27,7 @@ export default function Footer() {
 
             {/* Products */}
             <div>
-              <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5 pb-3 border-b border-white/20">Products</h4>
+              <h4 className="!text-white font-bold text-sm uppercase tracking-wider mb-5 pb-3 border-b border-white/20">Products</h4>
               <ul className="space-y-2.5 text-sm">
                 <li><Link href="/products/ecodiar-powder" className="text-white/70 hover:text-white transition-colors">Ecodiar® Powder</Link></li>
                 <li><Link href="/products/ecodiar-liquid" className="text-white/70 hover:text-white transition-colors">Ecodiar® Liquid</Link></li>
@@ -41,7 +41,7 @@ export default function Footer() {
 
             {/* Species */}
             <div>
-              <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5 pb-3 border-b border-white/20">Species</h4>
+              <h4 className="!text-white font-bold text-sm uppercase tracking-wider mb-5 pb-3 border-b border-white/20">Species</h4>
               <ul className="space-y-2.5 text-sm">
                 <li><Link href="/species/poultry" className="text-white/70 hover:text-white transition-colors">Poultry</Link></li>
                 <li><Link href="/species/swine" className="text-white/70 hover:text-white transition-colors">Swine</Link></li>
@@ -53,7 +53,7 @@ export default function Footer() {
 
             {/* Contact */}
             <div>
-              <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5 pb-3 border-b border-white/20">Contact</h4>
+              <h4 className="!text-white font-bold text-sm uppercase tracking-wider mb-5 pb-3 border-b border-white/20">Contact</h4>
               <ul className="space-y-4 text-sm text-white/70">
                 <li className="flex items-center gap-3">
                   <svg className="w-5 h-5 text-accent-bright flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
