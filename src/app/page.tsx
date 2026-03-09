@@ -42,6 +42,33 @@ const products = [
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" /></svg>
     ),
   },
+  {
+    name: "MYKOGEO® Plus",
+    slug: "mykogeo-plus",
+    description: "Blend of clay and organic plant compounds for targeted toxin mitigation.",
+    image: "/images/products/Mykogeo-Plus-Product-Image.png",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+    ),
+  },
+  {
+    name: "HyTann",
+    slug: "hytann",
+    description: "Water-soluble polyphenol compounds from Chestnut tree for enhanced animal health.",
+    image: "/images/products/Hytann-Product-Image.png",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+    ),
+  },
+  {
+    name: "NuBA",
+    slug: "nuba",
+    description: "Coated, highly concentrated calcium butyrate for gut integrity and balanced flora.",
+    image: "/images/products/NuBA-Product-Image.png",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+    ),
+  },
 ];
 
 const challenges = [
@@ -173,9 +200,9 @@ export default function Home() {
               <span className="text-accent font-bold text-sm uppercase tracking-wider">Our Solutions</span>
               <div className="w-8 h-[3px] bg-accent" />
             </div>
-            <h2 className="text-3xl md:text-[32px] font-bold font-heading">Featured Products</h2>
+            <h2 className="text-3xl md:text-[32px] font-bold font-heading">Our Products</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {products.map((product) => (
               <Link
                 key={product.slug}
@@ -201,12 +228,6 @@ export default function Home() {
                 </div>
               </Link>
             ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link href="/products" className="bg-accent text-white px-8 py-3.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-dark transition-colors inline-flex items-center gap-2">
-              View All Products
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </Link>
           </div>
         </div>
       </section>
