@@ -127,8 +127,12 @@ export default function Home() {
       </section>
 
       {/* Challenges Section */}
-      <section className="py-20 px-4 bg-white relative">
-        <div className="max-w-[1200px] mx-auto">
+      <section className="py-20 px-4 bg-light-bg relative overflow-hidden">
+        {/* Subtle decorative background */}
+        <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-accent/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-accent/5 rounded-full translate-y-1/2 -translate-x-1/2" />
+
+        <div className="relative max-w-[1200px] mx-auto">
           <div className="text-center mb-14">
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="w-8 h-[3px] bg-accent" />
@@ -136,14 +140,23 @@ export default function Home() {
               <div className="w-8 h-[3px] bg-accent" />
             </div>
             <h2 className="text-3xl md:text-[32px] font-bold font-heading">What Are Your Challenges?</h2>
+            <p className="text-body mt-3 max-w-xl mx-auto">
+              We address the most pressing challenges in animal nutrition with proven, natural solutions.
+            </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {challenges.map((c) => (
-              <div key={c.title} className="group bg-white border border-border rounded-[0.3rem] p-8 text-center hover:shadow-[0_5px_15px_rgba(0,0,0,0.15)] hover:border-accent transition-all">
-                <div className="w-16 h-16 bg-accent-50 rounded-full flex items-center justify-center mx-auto mb-5 text-accent group-hover:bg-accent group-hover:text-white transition-colors">
+            {challenges.map((c, idx) => (
+              <div key={c.title} className="group relative bg-white rounded-[0.3rem] p-8 text-center shadow-[0_2px_8px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_24px_rgba(46,125,50,0.15)] hover:-translate-y-1 transition-all duration-300">
+                {/* Green top accent bar */}
+                <div className="absolute top-0 left-0 right-0 h-[3px] bg-accent rounded-t-[0.3rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Number badge */}
+                <span className="absolute top-4 right-4 text-[40px] font-bold font-heading text-accent/[0.07] leading-none select-none">
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+                <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-5 text-accent group-hover:bg-accent group-hover:text-white group-hover:rounded-full transition-all duration-300">
                   {c.icon}
                 </div>
-                <h3 className="text-lg font-bold font-heading mb-3">{c.title}</h3>
+                <h3 className="text-lg font-bold font-heading mb-3 group-hover:text-accent transition-colors">{c.title}</h3>
                 <p className="text-body text-sm leading-relaxed">{c.desc}</p>
               </div>
             ))}
