@@ -76,11 +76,11 @@ const challenges = [
 ];
 
 const speciesList = [
-  { name: "Poultry", slug: "poultry", image: "/images/species/poultry-hero.png" },
-  { name: "Swine", slug: "swine", image: "/images/species/swine-hero.png" },
-  { name: "Beef", slug: "beef", image: "/images/species/beef-hero.png" },
-  { name: "Dairy", slug: "dairy", image: "/images/species/dairy-hero.png" },
-  { name: "Equine", slug: "equine", image: "/images/species/equine-hero.png" },
+  { name: "Poultry", slug: "poultry", image: "/images/species/poultry-illustration.png", tagline: "Broilers, Layers & Turkeys" },
+  { name: "Swine", slug: "swine", image: "/images/species/swine-illustration.png", tagline: "Piglets to Mature Hogs" },
+  { name: "Beef", slug: "beef", image: "/images/species/beef-illustration.png", tagline: "Feedlot & Cow-Calf" },
+  { name: "Dairy", slug: "dairy", image: "/images/species/dairy-illustration.png", tagline: "Milk Production & Herd Health" },
+  { name: "Equine", slug: "equine", image: "/images/species/equine-illustration.png", tagline: "Performance & Wellness" },
 ];
 
 export default function Home() {
@@ -214,6 +214,7 @@ export default function Home() {
       {/* Species Section */}
       <section className="py-20 px-4 bg-accent relative overflow-hidden">
         <div className="absolute top-0 left-0 w-[40%] h-[50%] bg-gradient-to-br from-white/10 to-transparent rounded-br-[100px]" />
+        <div className="absolute bottom-0 right-0 w-[30%] h-[40%] bg-gradient-to-tl from-white/5 to-transparent rounded-tl-[80px]" />
         <div className="relative max-w-[1200px] mx-auto">
           <div className="text-center mb-14">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -222,18 +223,46 @@ export default function Home() {
               <div className="w-8 h-[3px] bg-white" />
             </div>
             <h2 className="text-3xl md:text-[32px] font-bold text-white font-heading">Species We Serve</h2>
+            <p className="text-white/60 mt-3 max-w-xl mx-auto">
+              Tailored nutritional programs backed by science for every species.
+            </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
             {speciesList.map((s) => (
               <Link
                 key={s.slug}
                 href={`/species/${s.slug}`}
-                className="group bg-white/15 backdrop-blur-sm border border-white/20 rounded-[0.3rem] p-6 text-center hover:bg-white hover:border-white transition-all"
+                className="group relative bg-white/10 backdrop-blur-sm border border-white/15 rounded-lg overflow-hidden hover:bg-white hover:border-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)]"
               >
-                <div className="relative h-20 mb-4">
-                  <Image src={s.image} alt={s.name} fill className="object-contain group-hover:scale-105 transition-transform" />
+                {/* Image area */}
+                <div className="relative h-40 sm:h-44 bg-white/5 flex items-center justify-center p-3 overflow-hidden">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={s.image}
+                      alt={s.name}
+                      fill
+                      className="object-contain group-hover:scale-110 transition-transform duration-500"
+                      sizes="(max-width: 640px) 50vw, 20vw"
+                    />
+                  </div>
                 </div>
-                <h3 className="font-bold text-white group-hover:text-accent text-sm uppercase tracking-wide font-heading">{s.name}</h3>
+                {/* Text area */}
+                <div className="p-4 text-center">
+                  <h3 className="font-bold text-white group-hover:text-accent text-base uppercase tracking-wide font-heading transition-colors">
+                    {s.name}
+                  </h3>
+                  <p className="text-white/50 group-hover:text-body text-xs mt-1 transition-colors">
+                    {s.tagline}
+                  </p>
+                  {/* Arrow */}
+                  <div className="mt-3 flex justify-center">
+                    <span className="w-7 h-7 rounded-full bg-white/10 group-hover:bg-accent flex items-center justify-center transition-all duration-300">
+                      <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
               </Link>
             ))}
           </div>
