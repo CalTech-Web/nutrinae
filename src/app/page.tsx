@@ -86,35 +86,72 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-accent min-h-[85vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image src="/images/about/hero-1.png" alt="" fill className="object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-dark via-accent/90 to-accent-light/50" />
+      <section className="relative bg-white min-h-[85vh] flex items-center overflow-hidden">
+        {/* Animated floating elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Large accent circle */}
+          <div className="hero-float-1 absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-accent/[0.06]" />
+          {/* Medium ring */}
+          <div className="hero-float-2 absolute top-[15%] right-[15%] w-[200px] h-[200px] rounded-full border-2 border-accent/[0.08]" />
+          {/* Small filled circle */}
+          <div className="hero-float-3 absolute top-[60%] right-[25%] w-[80px] h-[80px] rounded-full bg-accent/[0.05]" />
+          {/* Dot cluster top */}
+          <div className="hero-float-4 absolute top-[20%] right-[40%] w-3 h-3 rounded-full bg-accent/20" />
+          <div className="hero-float-5 absolute top-[25%] right-[38%] w-2 h-2 rounded-full bg-accent/15" />
+          <div className="hero-float-6 absolute top-[18%] right-[42%] w-1.5 h-1.5 rounded-full bg-accent/20" />
+          {/* Large ring bottom-left */}
+          <div className="hero-float-3 absolute -bottom-16 -left-16 w-[300px] h-[300px] rounded-full border border-accent/[0.06]" />
+          {/* Subtle pulsing circle */}
+          <div className="hero-pulse absolute top-[40%] right-[10%] w-[120px] h-[120px] rounded-full bg-accent/[0.08]" />
+          {/* Floating dots */}
+          <div className="hero-float-7 absolute bottom-[30%] left-[45%] w-2.5 h-2.5 rounded-full bg-accent/15" />
+          <div className="hero-float-4 absolute bottom-[20%] right-[30%] w-2 h-2 rounded-full bg-accent/10" />
+          {/* Wireframe rings */}
+          <div className="hero-float-5 absolute top-[50%] left-[5%] w-[60px] h-[60px] rounded-full border border-accent/[0.08]" />
+          <div className="hero-float-2 absolute bottom-[15%] right-[45%] w-[100px] h-[100px] rounded-full border border-dashed border-accent/[0.07]" />
+          {/* Molecular-style lines */}
+          <svg className="hero-float-6 absolute top-[30%] right-[20%] w-[150px] h-[150px] opacity-[0.06]" viewBox="0 0 150 150">
+            <circle cx="30" cy="30" r="8" fill="#2E7D32" />
+            <circle cx="120" cy="50" r="6" fill="#2E7D32" />
+            <circle cx="75" cy="120" r="10" fill="#2E7D32" />
+            <line x1="30" y1="30" x2="120" y2="50" stroke="#2E7D32" strokeWidth="1.5" />
+            <line x1="120" y1="50" x2="75" y2="120" stroke="#2E7D32" strokeWidth="1.5" />
+            <line x1="75" y1="120" x2="30" y2="30" stroke="#2E7D32" strokeWidth="1.5" />
+          </svg>
+          <svg className="hero-float-1 absolute bottom-[25%] left-[15%] w-[120px] h-[120px] opacity-[0.05]" viewBox="0 0 120 120">
+            <circle cx="20" cy="60" r="6" fill="#2E7D32" />
+            <circle cx="100" cy="30" r="8" fill="#2E7D32" />
+            <circle cx="80" cy="100" r="5" fill="#2E7D32" />
+            <line x1="20" y1="60" x2="100" y2="30" stroke="#2E7D32" strokeWidth="1.5" />
+            <line x1="100" y1="30" x2="80" y2="100" stroke="#2E7D32" strokeWidth="1.5" />
+          </svg>
+          {/* Soft gradient accent */}
+          <div className="absolute bottom-0 right-0 w-[50%] h-[40%] bg-gradient-to-tl from-accent/[0.04] to-transparent rounded-tl-[100px]" />
         </div>
-        <div className="absolute bottom-0 right-0 w-[60%] h-[40%] bg-gradient-to-tl from-white/10 to-transparent rounded-tl-[100px]" />
 
         <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-[3px] bg-white" />
-              <span className="text-white font-bold text-sm uppercase tracking-wider">Science. Focus. Innovation.</span>
+              <div className="w-12 h-[3px] bg-accent" />
+              <span className="text-accent font-bold text-sm uppercase tracking-wider">Science. Focus. Innovation.</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-[48px] font-bold text-white leading-[1.2] mb-6 font-heading tracking-[-0.02em]">
-              Nutritional Solutions<br />for Animal Health
+            <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-primary leading-[1.15] mb-6 font-heading tracking-[-0.02em]">
+              Nutritional Solutions<br />
+              <span className="text-accent">for Animal Health</span>
             </h1>
-            <p className="text-xl text-white/90 mb-4 font-light">
+            <p className="text-xl text-accent/80 mb-4 font-medium">
               To Improve Performance And Profitability
             </p>
-            <p className="text-white/70 leading-relaxed mb-10 max-w-lg">
+            <p className="text-body leading-relaxed mb-10 max-w-lg">
               At NUTRINAE, we specialize in cutting-edge, science-based nutritional solutions
               that elevate animal health and performance through natural, high-quality ingredients.
             </p>
             <div className="flex gap-4 flex-wrap">
-              <Link href="/products" className="bg-white text-accent px-8 py-3.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent-50 transition-colors inline-flex items-center gap-2">
+              <Link href="/products" className="bg-accent text-white px-8 py-3.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-dark transition-colors inline-flex items-center gap-2">
                 Our Products
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </Link>
-              <Link href="/contact" className="border-2 border-white text-white px-8 py-3.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-white hover:text-accent transition-colors">
+              <Link href="/contact" className="border-2 border-accent text-accent px-8 py-3.5 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent hover:text-white transition-colors">
                 Contact Us
               </Link>
             </div>
