@@ -87,46 +87,59 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative bg-white min-h-[85vh] flex items-center overflow-hidden">
-        {/* Animated floating elements */}
+        {/* Animated NutriNae icon background */}
         <div className="absolute inset-0 pointer-events-none">
-          {/* Large accent circle */}
-          <div className="hero-float-1 absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-accent/[0.06]" />
-          {/* Medium ring */}
-          <div className="hero-float-2 absolute top-[15%] right-[15%] w-[200px] h-[200px] rounded-full border-2 border-accent/[0.08]" />
-          {/* Small filled circle */}
-          <div className="hero-float-3 absolute top-[60%] right-[25%] w-[80px] h-[80px] rounded-full bg-accent/[0.05]" />
-          {/* Dot cluster top */}
-          <div className="hero-float-4 absolute top-[20%] right-[40%] w-3 h-3 rounded-full bg-accent/20" />
-          <div className="hero-float-5 absolute top-[25%] right-[38%] w-2 h-2 rounded-full bg-accent/15" />
-          <div className="hero-float-6 absolute top-[18%] right-[42%] w-1.5 h-1.5 rounded-full bg-accent/20" />
-          {/* Large ring bottom-left */}
-          <div className="hero-float-3 absolute -bottom-16 -left-16 w-[300px] h-[300px] rounded-full border border-accent/[0.06]" />
-          {/* Subtle pulsing circle */}
-          <div className="hero-pulse absolute top-[40%] right-[10%] w-[120px] h-[120px] rounded-full bg-accent/[0.08]" />
-          {/* Floating dots */}
-          <div className="hero-float-7 absolute bottom-[30%] left-[45%] w-2.5 h-2.5 rounded-full bg-accent/15" />
-          <div className="hero-float-4 absolute bottom-[20%] right-[30%] w-2 h-2 rounded-full bg-accent/10" />
-          {/* Wireframe rings */}
-          <div className="hero-float-5 absolute top-[50%] left-[5%] w-[60px] h-[60px] rounded-full border border-accent/[0.08]" />
-          <div className="hero-float-2 absolute bottom-[15%] right-[45%] w-[100px] h-[100px] rounded-full border border-dashed border-accent/[0.07]" />
-          {/* Molecular-style lines */}
-          <svg className="hero-float-6 absolute top-[30%] right-[20%] w-[150px] h-[150px] opacity-[0.06]" viewBox="0 0 150 150">
-            <circle cx="30" cy="30" r="8" fill="#2E7D32" />
-            <circle cx="120" cy="50" r="6" fill="#2E7D32" />
-            <circle cx="75" cy="120" r="10" fill="#2E7D32" />
-            <line x1="30" y1="30" x2="120" y2="50" stroke="#2E7D32" strokeWidth="1.5" />
-            <line x1="120" y1="50" x2="75" y2="120" stroke="#2E7D32" strokeWidth="1.5" />
-            <line x1="75" y1="120" x2="30" y2="30" stroke="#2E7D32" strokeWidth="1.5" />
-          </svg>
-          <svg className="hero-float-1 absolute bottom-[25%] left-[15%] w-[120px] h-[120px] opacity-[0.05]" viewBox="0 0 120 120">
-            <circle cx="20" cy="60" r="6" fill="#2E7D32" />
-            <circle cx="100" cy="30" r="8" fill="#2E7D32" />
-            <circle cx="80" cy="100" r="5" fill="#2E7D32" />
-            <line x1="20" y1="60" x2="100" y2="30" stroke="#2E7D32" strokeWidth="1.5" />
-            <line x1="100" y1="30" x2="80" y2="100" stroke="#2E7D32" strokeWidth="1.5" />
-          </svg>
-          {/* Soft gradient accent */}
-          <div className="absolute bottom-0 right-0 w-[50%] h-[40%] bg-gradient-to-tl from-accent/[0.04] to-transparent rounded-tl-[100px]" />
+          {/* Main icon composition — right side */}
+          <div className="absolute top-1/2 right-[-5%] md:right-[5%] -translate-y-1/2 w-[500px] h-[500px] md:w-[600px] md:h-[600px]">
+            <svg viewBox="0 0 500 500" fill="none" className="w-full h-full">
+              {/* Outer arc — slow spin */}
+              <g className="icon-spin" style={{ transformOrigin: "250px 250px" }}>
+                <path d="M 250 30 A 220 220 0 1 1 80 380" stroke="#2E7D32" strokeWidth="18" strokeLinecap="round" fill="none" opacity="0.07" />
+              </g>
+              {/* Inner arc — opposite spin */}
+              <g className="icon-spin" style={{ transformOrigin: "250px 250px", animationDirection: "reverse", animationDuration: "45s" }}>
+                <path d="M 420 380 A 185 185 0 1 1 250 65" stroke="#4CAF50" strokeWidth="12" strokeLinecap="round" fill="none" opacity="0.06" />
+              </g>
+
+              {/* Leaf */}
+              <path d="M 95 290 Q 55 220 95 150 Q 125 105 130 150 Q 138 210 125 270 Q 115 300 95 290 Z" fill="#2E7D32" opacity="0.08" />
+              <path d="M 97 280 Q 100 220 115 165" stroke="#2E7D32" strokeWidth="1.5" fill="none" opacity="0.06" />
+
+              {/* Center circle — microbe container */}
+              <circle cx="300" cy="255" r="100" fill="#E8F5E9" opacity="0.25" />
+              <circle cx="300" cy="255" r="100" stroke="#2E7D32" strokeWidth="2" fill="none" opacity="0.08" />
+              <circle className="icon-pulse" cx="300" cy="255" r="105" stroke="#4CAF50" strokeWidth="1" fill="none" opacity="0.06" />
+
+              {/* Clipped microbes inside the circle */}
+              <defs>
+                <clipPath id="mc">
+                  <circle cx="300" cy="255" r="96" />
+                </clipPath>
+              </defs>
+              <g clipPath="url(#mc)">
+                {/* Bacteria rod shapes — each animated */}
+                <rect className="m1" x="270" y="220" width="32" height="10" rx="5" fill="#2E7D32" opacity="0.18" />
+                <rect className="m2" x="310" y="250" width="28" height="9" rx="4.5" fill="#4CAF50" opacity="0.16" />
+                <rect className="m3" x="260" y="270" width="35" height="11" rx="5.5" fill="#2E7D32" opacity="0.15" />
+                <rect className="m4" x="320" y="210" width="25" height="8" rx="4" fill="#66BB6A" opacity="0.18" />
+                <rect className="m5" x="285" y="295" width="30" height="9" rx="4.5" fill="#2E7D32" opacity="0.14" />
+                <rect className="m6" x="340" y="270" width="22" height="8" rx="4" fill="#4CAF50" opacity="0.16" />
+                <rect className="m7" x="250" y="240" width="28" height="9" rx="4.5" fill="#66BB6A" opacity="0.13" />
+                <rect className="m8" x="305" y="230" width="34" height="10" rx="5" fill="#2E7D32" opacity="0.17" />
+                <rect className="m9" x="275" y="310" width="26" height="8" rx="4" fill="#4CAF50" opacity="0.15" />
+                <rect className="m10" x="330" y="295" width="30" height="9" rx="4.5" fill="#2E7D32" opacity="0.14" />
+              </g>
+            </svg>
+          </div>
+
+          {/* Scattered floating dots */}
+          <div className="hero-dot-1 absolute top-[20%] right-[42%] w-2.5 h-2.5 rounded-full bg-accent/10" />
+          <div className="hero-dot-2 absolute top-[70%] left-[10%] w-2 h-2 rounded-full bg-accent/10" />
+          <div className="hero-dot-3 absolute top-[30%] left-[30%] w-1.5 h-1.5 rounded-full bg-accent/8" />
+          <div className="hero-dot-1 absolute bottom-[15%] right-[35%] w-2 h-2 rounded-full bg-accent/8" />
+
+          {/* Subtle corner gradient */}
+          <div className="absolute bottom-0 right-0 w-[40%] h-[30%] bg-gradient-to-tl from-accent/[0.03] to-transparent rounded-tl-[80px]" />
         </div>
 
         <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
