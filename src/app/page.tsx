@@ -87,59 +87,55 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative bg-white min-h-[85vh] flex items-center overflow-hidden">
-        {/* Animated NutriNae icon background */}
+        {/* Animated floating species icons */}
         <div className="absolute inset-0 pointer-events-none">
-          {/* Main icon composition — right side */}
-          <div className="absolute top-1/2 right-[-5%] md:right-[5%] -translate-y-1/2 w-[500px] h-[500px] md:w-[600px] md:h-[600px]">
-            <svg viewBox="0 0 500 500" fill="none" className="w-full h-full">
-              {/* Outer arc — slow spin */}
-              <g className="icon-spin" style={{ transformOrigin: "250px 250px" }}>
-                <path d="M 250 30 A 220 220 0 1 1 80 380" stroke="#2E7D32" strokeWidth="18" strokeLinecap="round" fill="none" opacity="0.07" />
-              </g>
-              {/* Inner arc — opposite spin */}
-              <g className="icon-spin" style={{ transformOrigin: "250px 250px", animationDirection: "reverse", animationDuration: "45s" }}>
-                <path d="M 420 380 A 185 185 0 1 1 250 65" stroke="#4CAF50" strokeWidth="12" strokeLinecap="round" fill="none" opacity="0.06" />
-              </g>
-
-              {/* Leaf */}
-              <path d="M 95 290 Q 55 220 95 150 Q 125 105 130 150 Q 138 210 125 270 Q 115 300 95 290 Z" fill="#2E7D32" opacity="0.08" />
-              <path d="M 97 280 Q 100 220 115 165" stroke="#2E7D32" strokeWidth="1.5" fill="none" opacity="0.06" />
-
-              {/* Center circle — microbe container */}
-              <circle cx="300" cy="255" r="100" fill="#E8F5E9" opacity="0.25" />
-              <circle cx="300" cy="255" r="100" stroke="#2E7D32" strokeWidth="2" fill="none" opacity="0.08" />
-              <circle className="icon-pulse" cx="300" cy="255" r="105" stroke="#4CAF50" strokeWidth="1" fill="none" opacity="0.06" />
-
-              {/* Clipped microbes inside the circle */}
-              <defs>
-                <clipPath id="mc">
-                  <circle cx="300" cy="255" r="96" />
-                </clipPath>
-              </defs>
-              <g clipPath="url(#mc)">
-                {/* Bacteria rod shapes — each animated */}
-                <rect className="m1" x="270" y="220" width="32" height="10" rx="5" fill="#2E7D32" opacity="0.18" />
-                <rect className="m2" x="310" y="250" width="28" height="9" rx="4.5" fill="#4CAF50" opacity="0.16" />
-                <rect className="m3" x="260" y="270" width="35" height="11" rx="5.5" fill="#2E7D32" opacity="0.15" />
-                <rect className="m4" x="320" y="210" width="25" height="8" rx="4" fill="#66BB6A" opacity="0.18" />
-                <rect className="m5" x="285" y="295" width="30" height="9" rx="4.5" fill="#2E7D32" opacity="0.14" />
-                <rect className="m6" x="340" y="270" width="22" height="8" rx="4" fill="#4CAF50" opacity="0.16" />
-                <rect className="m7" x="250" y="240" width="28" height="9" rx="4.5" fill="#66BB6A" opacity="0.13" />
-                <rect className="m8" x="305" y="230" width="34" height="10" rx="5" fill="#2E7D32" opacity="0.17" />
-                <rect className="m9" x="275" y="310" width="26" height="8" rx="4" fill="#4CAF50" opacity="0.15" />
-                <rect className="m10" x="330" y="295" width="30" height="9" rx="4.5" fill="#2E7D32" opacity="0.14" />
-              </g>
-            </svg>
+          {/* Large — poultry, top-right */}
+          <div className="species-float-1 absolute top-[5%] right-[2%] w-[180px] h-[180px] md:w-[260px] md:h-[260px] opacity-[0.12]">
+            <Image src="/images/species/poultry-hero.png" alt="" fill className="object-contain" />
+          </div>
+          {/* Medium — swine, right-center */}
+          <div className="species-float-2 absolute top-[40%] right-[8%] w-[140px] h-[140px] md:w-[190px] md:h-[190px] opacity-[0.10]">
+            <Image src="/images/species/swine-hero.png" alt="" fill className="object-contain" />
+          </div>
+          {/* Small — beef, bottom-right */}
+          <div className="species-float-3 absolute bottom-[8%] right-[15%] w-[100px] h-[100px] md:w-[140px] md:h-[140px] opacity-[0.10]">
+            <Image src="/images/species/beef-hero.png" alt="" fill className="object-contain" />
+          </div>
+          {/* Medium — dairy, bottom-center */}
+          <div className="species-float-4 absolute bottom-[5%] right-[38%] w-[110px] h-[110px] md:w-[160px] md:h-[160px] opacity-[0.08]">
+            <Image src="/images/species/dairy-hero.png" alt="" fill className="object-contain" />
+          </div>
+          {/* Small — equine, top-center-right */}
+          <div className="species-float-5 absolute top-[15%] right-[32%] w-[90px] h-[90px] md:w-[120px] md:h-[120px] opacity-[0.09]">
+            <Image src="/images/species/equine-hero.png" alt="" fill className="object-contain" />
+          </div>
+          {/* Tiny — poultry icon, mid-left area */}
+          <div className="species-float-6 absolute top-[55%] left-[55%] w-[70px] h-[70px] md:w-[90px] md:h-[90px] opacity-[0.07]">
+            <Image src="/images/species/poultry-icon.png" alt="" fill className="object-contain" />
+          </div>
+          {/* Small — swine icon, upper area */}
+          <div className="species-float-7 absolute top-[8%] right-[50%] w-[60px] h-[60px] md:w-[80px] md:h-[80px] opacity-[0.06]">
+            <Image src="/images/species/swine-icon.png" alt="" fill className="object-contain" />
+          </div>
+          {/* Tiny — beef icon, lower-left */}
+          <div className="species-float-8 absolute bottom-[20%] left-[48%] w-[55px] h-[55px] md:w-[75px] md:h-[75px] opacity-[0.07]">
+            <Image src="/images/species/beef-icon.png" alt="" fill className="object-contain" />
+          </div>
+          {/* Medium — equine, far right */}
+          <div className="species-float-9 absolute top-[65%] right-[0%] w-[120px] h-[120px] md:w-[170px] md:h-[170px] opacity-[0.08]">
+            <Image src="/images/species/equine-hero.png" alt="" fill className="object-contain" />
+          </div>
+          {/* Tiny — dairy icon */}
+          <div className="species-float-10 absolute top-[30%] right-[22%] w-[50px] h-[50px] md:w-[70px] md:h-[70px] opacity-[0.06]">
+            <Image src="/images/species/dairy-icon.png" alt="" fill className="object-contain" />
+          </div>
+          {/* Small — poultry, bottom far-right */}
+          <div className="species-float-11 absolute bottom-[30%] right-[28%] w-[65px] h-[65px] md:w-[95px] md:h-[95px] opacity-[0.07]">
+            <Image src="/images/species/poultry-icon.png" alt="" fill className="object-contain" />
           </div>
 
-          {/* Scattered floating dots */}
-          <div className="hero-dot-1 absolute top-[20%] right-[42%] w-2.5 h-2.5 rounded-full bg-accent/10" />
-          <div className="hero-dot-2 absolute top-[70%] left-[10%] w-2 h-2 rounded-full bg-accent/10" />
-          <div className="hero-dot-3 absolute top-[30%] left-[30%] w-1.5 h-1.5 rounded-full bg-accent/8" />
-          <div className="hero-dot-1 absolute bottom-[15%] right-[35%] w-2 h-2 rounded-full bg-accent/8" />
-
-          {/* Subtle corner gradient */}
-          <div className="absolute bottom-0 right-0 w-[40%] h-[30%] bg-gradient-to-tl from-accent/[0.03] to-transparent rounded-tl-[80px]" />
+          {/* Soft bottom-right gradient */}
+          <div className="absolute bottom-0 right-0 w-[50%] h-[35%] bg-gradient-to-tl from-accent/[0.03] to-transparent rounded-tl-[80px]" />
         </div>
 
         <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">

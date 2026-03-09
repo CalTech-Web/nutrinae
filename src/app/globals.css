@@ -34,59 +34,46 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-/* Hero animated background */
-@keyframes icon-rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+/* Hero floating species animation */
+@keyframes hero-rise-1 {
+  0% { transform: translateY(0) rotate(0deg) scale(1); }
+  25% { transform: translateY(-25px) rotate(5deg) scale(1.02); }
+  50% { transform: translateY(-40px) rotate(-3deg) scale(0.98); }
+  75% { transform: translateY(-15px) rotate(4deg) scale(1.01); }
+  100% { transform: translateY(0) rotate(0deg) scale(1); }
 }
-@keyframes icon-pulse {
-  0%, 100% { opacity: 0.06; }
-  50% { opacity: 0.12; }
+@keyframes hero-rise-2 {
+  0% { transform: translateY(0) translateX(0) rotate(0deg); }
+  33% { transform: translateY(-30px) translateX(15px) rotate(-6deg); }
+  66% { transform: translateY(-10px) translateX(-10px) rotate(4deg); }
+  100% { transform: translateY(0) translateX(0) rotate(0deg); }
 }
-@keyframes microbe-1 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(12px, -18px) rotate(40deg); }
-  50% { transform: translate(-8px, -10px) rotate(90deg); }
-  75% { transform: translate(15px, 8px) rotate(140deg); }
+@keyframes hero-rise-3 {
+  0% { transform: translateY(0) translateX(0) scale(1); }
+  20% { transform: translateY(-20px) translateX(-12px) scale(1.03); }
+  50% { transform: translateY(-35px) translateX(8px) scale(0.97); }
+  80% { transform: translateY(-10px) translateX(-5px) scale(1.02); }
+  100% { transform: translateY(0) translateX(0) scale(1); }
 }
-@keyframes microbe-2 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(-15px, 10px) rotate(-35deg); }
-  50% { transform: translate(10px, 20px) rotate(-80deg); }
-  75% { transform: translate(-5px, -12px) rotate(-120deg); }
+@keyframes hero-drift {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(10px, -20px) rotate(3deg); }
+  50% { transform: translate(-5px, -30px) rotate(-2deg); }
+  75% { transform: translate(8px, -12px) rotate(2deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
 }
-@keyframes microbe-3 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(18px, 15px) rotate(60deg); }
-  66% { transform: translate(-12px, -8px) rotate(130deg); }
+@keyframes hero-sway {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  50% { transform: translateX(20px) rotate(5deg); }
 }
-@keyframes microbe-4 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  20% { transform: translate(-10px, -20px) rotate(-50deg); }
-  50% { transform: translate(8px, 5px) rotate(-100deg); }
-  80% { transform: translate(-18px, 12px) rotate(-160deg); }
-}
-@keyframes microbe-5 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  30% { transform: translate(14px, -8px) rotate(45deg); }
-  60% { transform: translate(-6px, 16px) rotate(100deg); }
-}
-@keyframes float-dot {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-}
-.m1 { animation: microbe-1 12s ease-in-out infinite; }
-.m2 { animation: microbe-2 14s ease-in-out infinite 1s; }
-.m3 { animation: microbe-3 10s ease-in-out infinite 0.5s; }
-.m4 { animation: microbe-4 13s ease-in-out infinite 2s; }
-.m5 { animation: microbe-5 11s ease-in-out infinite 1.5s; }
-.m6 { animation: microbe-1 15s ease-in-out infinite 3s; }
-.m7 { animation: microbe-3 12s ease-in-out infinite 2.5s; }
-.m8 { animation: microbe-2 11s ease-in-out infinite 0.8s; }
-.m9 { animation: microbe-4 14s ease-in-out infinite 1.2s; }
-.m10 { animation: microbe-5 13s ease-in-out infinite 3.5s; }
-.icon-spin { animation: icon-rotate 60s linear infinite; }
-.icon-pulse { animation: icon-pulse 5s ease-in-out infinite; }
-.hero-dot-1 { animation: float-dot 6s ease-in-out infinite; }
-.hero-dot-2 { animation: float-dot 8s ease-in-out infinite 1s; }
-.hero-dot-3 { animation: float-dot 7s ease-in-out infinite 2s; }
+.species-float-1 { animation: hero-rise-1 10s ease-in-out infinite; }
+.species-float-2 { animation: hero-rise-2 12s ease-in-out infinite 1.5s; }
+.species-float-3 { animation: hero-rise-3 14s ease-in-out infinite 0.8s; }
+.species-float-4 { animation: hero-drift 11s ease-in-out infinite 2s; }
+.species-float-5 { animation: hero-sway 13s ease-in-out infinite 0.5s; }
+.species-float-6 { animation: hero-rise-1 15s ease-in-out infinite 3s; }
+.species-float-7 { animation: hero-rise-2 9s ease-in-out infinite 1s; }
+.species-float-8 { animation: hero-drift 12s ease-in-out infinite 2.5s; }
+.species-float-9 { animation: hero-rise-3 11s ease-in-out infinite 4s; }
+.species-float-10 { animation: hero-sway 10s ease-in-out infinite 1.8s; }
+.species-float-11 { animation: hero-rise-1 13s ease-in-out infinite 3.5s; }
