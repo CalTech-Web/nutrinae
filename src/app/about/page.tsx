@@ -99,17 +99,17 @@ export default function AboutPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
-              { abbr: "AFIA", name: "American Feed Industry Association", desc: "Advocating for a thriving feed industry as a vital part of the food chain." },
-              { abbr: "ASAS", name: "American Society of Animal Science", desc: "Advancing animal science for enhanced animal and human well-being." },
-              { abbr: "CGFA", name: "California Grain and Feed Association", desc: "Bringing the grain and feed industry together as a united voice." },
-              { abbr: "GOA", name: "Global Organic Alliance", desc: "Maintaining ISO 17065 and NOP Accreditation for organic certification." },
-              { abbr: "OMRI", name: "Organic Materials Review Institute", desc: "Supporting organic integrity through product review for certified organic operations." },
-              { abbr: "PSA", name: "Poultry Science Association", desc: "Supporting scientific advancement in poultry science." },
-              { abbr: "TPF", name: "The Poultry Federation", desc: "Promoting the poultry and egg industries through a unified voice." },
+              { abbr: "AFIA", name: "American Feed Industry Association", desc: "Advocating for a thriving feed industry as a vital part of the food chain.", logo: "/images/affiliations/afia.png" },
+              { abbr: "ASAS", name: "American Society of Animal Science", desc: "Advancing animal science for enhanced animal and human well-being.", logo: "/images/affiliations/asas.png" },
+              { abbr: "CGFA", name: "California Grain and Feed Association", desc: "Bringing the grain and feed industry together as a united voice.", logo: "/images/affiliations/cgfa.png" },
+              { abbr: "GOA", name: "Global Organic Alliance", desc: "Maintaining ISO 17065 and NOP Accreditation for organic certification.", logo: "/images/affiliations/goa.png" },
+              { abbr: "OMRI", name: "Organic Materials Review Institute", desc: "Supporting organic integrity through product review for certified organic operations.", logo: "/images/affiliations/omri.jpg" },
+              { abbr: "PSA", name: "Poultry Science Association", desc: "Supporting scientific advancement in poultry science.", logo: "/images/affiliations/psa.jpg" },
+              { abbr: "TPF", name: "The Poultry Federation", desc: "Promoting the poultry and egg industries through a unified voice.", logo: "/images/affiliations/tpf.png" },
             ].map((org) => (
               <div key={org.abbr} className="bg-white border border-border rounded-[0.3rem] p-6 flex items-start gap-4 hover:shadow-[0_5px_15px_rgba(0,0,0,0.1)] transition-shadow">
-                <div className="w-12 h-12 bg-accent rounded-[0.3rem] flex items-center justify-center flex-shrink-0">
-                  <span className="text-white font-bold text-xs">{org.abbr}</span>
+                <div className="w-12 h-12 rounded-[0.3rem] flex items-center justify-center flex-shrink-0 overflow-hidden relative bg-white">
+                  <Image src={org.logo} alt={org.name} fill className="object-contain p-1" />
                 </div>
                 <div>
                   <h3 className="font-bold text-primary text-sm mb-1">{org.name}</h3>
