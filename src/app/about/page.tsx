@@ -68,18 +68,19 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-[32px] font-bold font-heading">Our Mission</h2>
             <p className="text-body mt-3">NUTRINAE&apos;s mission is driven by three key principles:</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Research", desc: "Our products are based on rigorous scientific research, utilizing natural components with proven benefits for animal health.", icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg> },
-              { title: "Quality", desc: "We prioritize sourcing the finest ingredients available to ensure that our products are both effective and cost-efficient.", icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> },
-              { title: "Partnership", desc: "Building long-lasting, collaborative relationships with our customers, suppliers, and team members is at the heart of everything we do.", icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg> },
+              { title: "Research", desc: "Our products are based on rigorous scientific research, utilizing natural components with proven benefits for animal health.", icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg> },
+              { title: "Quality", desc: "We prioritize sourcing the finest ingredients available to ensure that our products are both effective and cost-efficient.", icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> },
+              { title: "Partnership", desc: "Building long-lasting, collaborative relationships with our customers, suppliers, and team members is at the heart of everything we do.", icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg> },
             ].map((item) => (
-              <div key={item.title} className="group border border-border rounded-[0.3rem] p-8 text-center hover:shadow-[0_5px_15px_rgba(0,0,0,0.15)] hover:border-accent transition-all">
-                <div className="w-16 h-16 bg-accent-50 rounded-full flex items-center justify-center mx-auto mb-5 text-accent group-hover:bg-accent group-hover:text-white transition-colors">
+              <div key={item.title} className="group relative bg-white rounded-lg p-10 text-center shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgba(46,125,50,0.15)] transition-all duration-300 overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-accent-light to-accent-bright scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                <div className="w-16 h-16 bg-accent-50 rounded-2xl flex items-center justify-center mx-auto mb-6 text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 transition-all duration-300">
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-bold font-heading mb-3">{item.title}</h3>
-                <p className="text-body text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-body text-[15px] leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
