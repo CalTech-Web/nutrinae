@@ -239,20 +239,36 @@ export default function HeroProductSlideshow() {
         );
       })}
 
-      {/* Navigation dots — pushed further down */}
-      <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-        {products.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => goTo(i)}
-            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-              i === current
-                ? "bg-accent scale-125"
-                : "bg-primary/20 hover:bg-primary/40"
-            }`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
+      {/* Navigation — arrows + dots */}
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-3 z-20">
+        <button
+          onClick={() => setCurrent((prev) => (prev - 1 + products.length) % products.length)}
+          className="w-8 h-8 rounded-full bg-white border border-border flex items-center justify-center hover:bg-accent hover:text-white hover:border-accent transition-colors text-primary/50"
+          aria-label="Previous product"
+        >
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+        </button>
+        <div className="flex gap-2">
+          {products.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              className={`rounded-full transition-all duration-300 ${
+                i === current
+                  ? "w-6 h-2.5 bg-accent"
+                  : "w-2.5 h-2.5 bg-primary/20 hover:bg-primary/40"
+              }`}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
+        <button
+          onClick={() => setCurrent((prev) => (prev + 1) % products.length)}
+          className="w-8 h-8 rounded-full bg-white border border-border flex items-center justify-center hover:bg-accent hover:text-white hover:border-accent transition-colors text-primary/50"
+          aria-label="Next product"
+        >
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+        </button>
       </div>
 
       <style>{`
