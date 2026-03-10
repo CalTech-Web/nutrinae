@@ -3,11 +3,11 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 const speciesList = [
-  { name: "Poultry", slug: "poultry", icon: "/images/species/poultry-illustration.png" },
-  { name: "Swine", slug: "swine", icon: "/images/species/swine-illustration.png" },
-  { name: "Beef", slug: "beef", icon: "/images/species/beef-illustration.png" },
-  { name: "Dairy", slug: "dairy", icon: "/images/species/dairy-illustration.png" },
-  { name: "Equine", slug: "equine", icon: "/images/species/equine-illustration.png" },
+  { name: "Poultry", slug: "poultry", icon: "/images/species/poultry-illustration.webp" },
+  { name: "Swine", slug: "swine", icon: "/images/species/swine-illustration.webp" },
+  { name: "Beef", slug: "beef", icon: "/images/species/beef-illustration.webp" },
+  { name: "Dairy", slug: "dairy", icon: "/images/species/dairy-illustration.webp" },
+  { name: "Equine", slug: "equine", icon: "/images/species/equine-illustration.webp" },
 ];
 
 const productData: Record<string, {
@@ -262,12 +262,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      <style>{`
-        @keyframes speciesPulse {
-          0% { transform: scale(1); opacity: 0.4; }
-          75%, 100% { transform: scale(1.8); opacity: 0; }
-        }
-      `}</style>
     </>
   );
 }

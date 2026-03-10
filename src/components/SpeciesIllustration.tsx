@@ -237,13 +237,6 @@ export default function SpeciesIllustration({ species }: { species: string }) {
         </div>
       </div>
 
-      {/* Keyframe for pulsing dots */}
-      <style>{`
-        @keyframes ping {
-          0% { transform: scale(1); opacity: 0.5; }
-          75%, 100% { transform: scale(2.2); opacity: 0; }
-        }
-      `}</style>
     </section>
   );
 }

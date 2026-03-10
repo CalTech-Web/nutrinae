@@ -93,12 +93,6 @@ export default function SpeciesPage() {
         </div>
       </section>
 
-      <style>{`
-        @keyframes speciesPulse {
-          0% { transform: scale(1); opacity: 0.4; }
-          75%, 100% { transform: scale(2); opacity: 0; }
-        }
-      `}</style>
     </>
   );
 }

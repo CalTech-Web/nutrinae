@@ -271,12 +271,6 @@ export default function HeroProductSlideshow() {
         </button>
       </div>
 
-      <style>{`
-        @keyframes heroPulse {
-          0% { transform: scale(1); opacity: 0.4; }
-          75%, 100% { transform: scale(1.8); opacity: 0; }
-        }
-      `}</style>
     </div>
   );
 }
