@@ -48,7 +48,7 @@ const allProducts = [
   { name: "MYKOGEO®", slug: "mykogeo", desc: "Natural clay with increased surface area and absorption capacity.", image: "/images/products/Mykogeo-Product-Image.png" },
   { name: "MYKOGEO® Plus", slug: "mykogeo-plus", desc: "Clay blended with organic compounds for targeted toxin mitigation.", image: "/images/products/Mykogeo-Plus-Product-Image.png" },
   { name: "HyTann", slug: "hytann", desc: "100% natural hydrolysable tannin from the Chestnut tree.", image: "/images/products/Hytann-Product-Image.png" },
-  { name: "NuBA", slug: "nuba", desc: "Coated, highly concentrated calcium butyrate." },
+  { name: "NuBA", slug: "nuba", desc: "Coated, highly concentrated calcium butyrate.", image: "/images/products/NuBA-Product-Image.png" },
 ];
 
 export function generateStaticParams() {
@@ -63,18 +63,17 @@ export default async function SpeciesDetailPage({ params }: { params: Promise<{ 
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-accent text-white py-24 px-4 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <Image src={species.heroImage} alt="" fill className="object-cover" />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-dark via-accent/90 to-accent-light/50" />
-        <div className="absolute bottom-0 right-0 w-[40%] h-[40%] bg-gradient-to-tl from-white/10 to-transparent rounded-tl-[80px]" />
+      <section className="relative bg-white py-28 px-4 overflow-hidden">
         <div className="relative max-w-[1200px] mx-auto">
-          <Link href="/species" className="text-white/70 hover:text-white text-sm font-bold uppercase tracking-wide mb-6 inline-flex items-center gap-2 transition-colors">
+          <Link href="/species" className="text-body hover:text-accent text-sm font-bold uppercase tracking-wide mb-6 inline-flex items-center gap-2 transition-colors">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
             All Species
           </Link>
-          <h1 className="text-4xl md:text-[48px] font-bold leading-[1.2] font-heading tracking-[-0.02em] text-white">{species.name}</h1>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-[3px] bg-accent" />
+            <span className="text-accent font-bold text-sm uppercase tracking-wider">Species</span>
+          </div>
+          <h1 className="text-4xl md:text-[48px] font-bold leading-[1.2] font-heading tracking-[-0.02em] text-primary">{species.name}</h1>
         </div>
       </section>
 
@@ -130,11 +129,15 @@ export default async function SpeciesDetailPage({ params }: { params: Promise<{ 
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-4 bg-accent">
-        <div className="max-w-[1200px] mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold font-heading text-white mb-4">Need More Information?</h2>
+      <section className="relative py-20 px-4 bg-gradient-to-br from-accent to-dark overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+        <div className="relative max-w-[1200px] mx-auto text-center">
+          <div className="w-14 h-14 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold font-heading mb-4" style={{ color: '#ffffff' }}>Need More Information?</h2>
           <p className="text-white/80 mb-8 max-w-2xl mx-auto">Our team of experts is ready to help you find the right solutions for your {species.name.toLowerCase()} operation.</p>
-          <Link href="/contact" className="bg-white text-accent px-8 py-3 rounded-[0.2rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent-50 transition-colors inline-flex items-center gap-2">
+          <Link href="/contact" className="bg-white text-accent px-8 py-3.5 rounded-[0.3rem] text-[14px] font-bold uppercase tracking-wide hover:bg-accent-50 transition-colors inline-flex items-center gap-2 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
             Contact Us
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </Link>
