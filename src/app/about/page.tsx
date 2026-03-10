@@ -4,7 +4,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-white py-28 px-4 overflow-hidden">
+      <section className="relative bg-white py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="relative max-w-[1200px] mx-auto">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
