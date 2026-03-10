@@ -5,10 +5,6 @@ export default function AboutPage() {
     <>
       {/* Hero */}
       <section className="relative bg-white py-28 px-4 overflow-hidden">
-        <div className="absolute right-[-5%] top-1/2 -translate-y-1/2 w-[500px] h-[180px] opacity-[0.04] pointer-events-none select-none">
-          <Image src="/images/logos/2025-Logo-Nutrinae-Green.png" alt="" fill className="object-contain" />
-        </div>
-        <div className="absolute bottom-0 right-0 w-[50%] h-[30%] bg-gradient-to-tl from-accent-50 to-transparent rounded-tl-[80px]" />
         <div className="relative max-w-[1200px] mx-auto">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
