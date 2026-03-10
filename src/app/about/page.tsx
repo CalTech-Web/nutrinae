@@ -41,9 +41,6 @@ export default function AboutPage() {
                   With more than 35 years of experience in nutrition, health, and genetics, the NUTRINAE team is well positioned to offer science-based natural solutions and technical services to ensure that our customers&apos; operations maximize performance.
                 </p>
               </div>
-              <div className="relative h-64 lg:h-72 rounded-[0.3rem] overflow-hidden">
-                <Image src="/images/about/hero-1.png" alt="Farm animals" fill className="object-cover" />
-              </div>
             </div>
           </div>
         </div>
