@@ -26,7 +26,7 @@ const productData: Record<string, {
     tagline: "OREGANO ESSENTIAL OIL FOR OPTIMAL ANIMAL GUT HEALTH THROUGH THE FEED",
     description: "A steam distilled essential oil derived from the oregano plant (Origanum vulgare ssp. hirtum), naturally selected to contain optimal ratios of phenolic compounds including carvacrol and thymol.",
     badge: "OMRI Listed",
-    image: "/images/products/Ecodiar-Powder-Product-Image.png",
+    image: "/images/products/Ecodiar-Powder-Product-Image.webp",
     badgeImage: "/images/badges/omri-listed.jpg",
     benefits: [
       "Used as a flavor agent in poultry and livestock diets to increase feed intake",
@@ -45,7 +45,7 @@ const productData: Record<string, {
     name: "Ecodiar® Liquid",
     tagline: "OREGANO ESSENTIAL OIL FOR OPTIMAL ANIMAL GUT HEALTH THROUGH THE DRINKING WATER",
     description: "A unique combination of oregano essential oil, distilled water and an emulsifier to deliver optimal health benefits.",
-    image: "/images/products/Ecodiar-Liquid-Product-Image.png",
+    image: "/images/products/Ecodiar-Liquid-Product-Image.webp",
     benefits: [
       "Used as a flavor agent in poultry and livestock water systems to increase water intake",
       "It helps preserve sow body condition during lactation due to increased feed intake",
@@ -64,7 +64,7 @@ const productData: Record<string, {
     tagline: "PURE SAPONINS FOR IMPROVED PROTOZOA MITIGATION AND IMMUNE SYSTEM SUPPORT",
     description: "100% natural saponins derived from the Quillaja saponaria molina tree. It is rich in triterpenoid saponins, glycol-components, tannins, antioxidants and polyphenols with no preservatives or carriers.",
     badge: "Organic",
-    image: "/images/products/Nuquil-Product-Image.png",
+    image: "/images/products/Nuquil-Product-Image.webp",
     badgeImage: "/images/badges/organic-seal.jpg",
     benefits: [
       "Improves gut health and overall animal performance",
@@ -81,7 +81,7 @@ const productData: Record<string, {
     tagline: "NATURALLY EXTRACTED CLAY FOR OPTIMAL FEED FLOW AND IMMUNE SYSTEM SUPPORT",
     description: "100% Attapulgite clay (natural hydrated magnesium aluminosilicate) produced through a proprietary technology to increase its surface area and absorption capacity.",
     badge: "OMRI Listed",
-    image: "/images/products/Mykogeo-Product-Image.png",
+    image: "/images/products/Mykogeo-Product-Image.webp",
     badgeImage: "/images/badges/omri-listed.jpg",
     benefits: [
       "One of the larger absorption molecules when compared to other minerals, producing drier litters in poultry and livestock animals",
@@ -93,7 +93,7 @@ const productData: Record<string, {
     name: "MYKOGEO® Plus",
     tagline: "PROPRIETARY BLEND OF CLAY AND ORGANIC PLANT COMPOUNDS FOR TARGETED TOXIN MITIGATION",
     description: "A blend of Attapulgite clay and organic compounds formulated to target specific toxins produced by fungi.",
-    image: "/images/products/Mykogeo-Plus-Product-Image.png",
+    image: "/images/products/Mykogeo-Plus-Product-Image.webp",
     benefits: [
       "One of the larger absorption molecules when compared to other minerals, producing drier litters in poultry and livestock animals",
       "Mitigate the negative effects of specific toxins produced by fungi",
@@ -104,7 +104,7 @@ const productData: Record<string, {
     name: "HyTann",
     tagline: "WATER-SOLUBLE POLYPHENOL COMPOUNDS FOR ENHANCED MONOGASTRIC AND RUMINANT ANIMAL HEALTH",
     description: "100% natural hydrolysable tannins derived from the Chestnut castanea sativa tree. Rich in tannic acid with no preservatives or carriers.",
-    image: "/images/products/Hytann-Product-Image.png",
+    image: "/images/products/Hytann-Product-Image.webp",
     benefits: [
       "Mitigates the harmful effects of oxidation and free radicals",
       "Helps support the immune system against inflammation, bacteria and viruses",
@@ -116,7 +116,7 @@ const productData: Record<string, {
     name: "NuBA",
     tagline: "COATED, HIGHLY CONCENTRATED CALCIUM BUTYRATE",
     description: "Contains at least 65% butyric acid.",
-    image: "/images/products/NuBA-Product-Image.png",
+    image: "/images/products/NuBA-Product-Image.webp",
     benefits: [
       "Stimulates gut integrity",
       "Helps maintain a balanced intestinal flora",

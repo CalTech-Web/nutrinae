@@ -1,35 +1,41 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Species",
+  description: "Tailored nutritional solutions for poultry, swine, beef, dairy, and equine — backed by science.",
+};
 
 const speciesList = [
   {
     name: "Poultry",
     slug: "poultry",
-    image: "/images/species/poultry-illustration.png",
+    image: "/images/species/poultry-illustration.webp",
     desc: "Enhancing poultry health and performance through scientifically formulated solutions for broilers, layers, and turkeys at all stages of growth, ensuring optimal productivity and well-being.",
   },
   {
     name: "Swine",
     slug: "swine",
-    image: "/images/species/swine-illustration.png",
+    image: "/images/species/swine-illustration.webp",
     desc: "Advancing swine well-being and productivity with innovative solutions that support optimal growth, improve immune function, and enhance overall health from piglets to mature hogs.",
   },
   {
     name: "Beef",
     slug: "beef",
-    image: "/images/species/beef-illustration.png",
+    image: "/images/species/beef-illustration.webp",
     desc: "Tailored nutritional solutions to ensure your beef cattle receive the essential nutrients and support needed for optimal growth, feed efficiency, and overall productivity.",
   },
   {
     name: "Dairy",
     slug: "dairy",
-    image: "/images/species/dairy-illustration.png",
+    image: "/images/species/dairy-illustration.webp",
     desc: "Supporting overall dairy herd health and productivity with solutions designed to optimize milk production, improve udder health, and ensure the well-being of dairy animals.",
   },
   {
     name: "Equine",
     slug: "equine",
-    image: "/images/species/equine-illustration.png",
+    image: "/images/species/equine-illustration.webp",
     desc: "Specialized products to support horse health, enhance performance, and promote overall well-being with a focus on digestive stability, immune support, and nutritional balance.",
   },
 ];

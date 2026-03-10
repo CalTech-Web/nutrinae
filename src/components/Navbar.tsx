@@ -127,7 +127,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile hamburger */}
-            <button className="lg:hidden text-primary p-2" onClick={() => setMobileOpen(!mobileOpen)}>
+            <button className="lg:hidden text-primary p-2" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle navigation menu">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

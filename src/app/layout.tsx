@@ -7,22 +7,31 @@ import Footer from "@/components/Footer";
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
 });
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "NutriNae - Nutritional Solutions for Animal Health",
+  metadataBase: new URL("https://nutrinae.com"),
+  title: {
+    default: "NutriNae - Science-Based Nutritional Solutions for Animal Health",
+    template: "%s | NutriNae",
+  },
   description:
-    "NUTRINAE specializes in providing cutting-edge, science-based nutritional solutions that elevate animal health and performance.",
+    "NUTRINAE specializes in cutting-edge, science-based nutritional solutions that elevate animal health and performance through natural, high-quality ingredients.",
   icons: {
     icon: "/icon.png",
     apple: "/apple-icon.png",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "NutriNae",
+    locale: "en_US",
   },
 };
 

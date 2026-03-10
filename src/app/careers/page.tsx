@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Careers",
+  description: "Join the NUTRINAE team — explore open positions in animal nutrition and science-based product development.",
+};
+
 export default function CareersPage() {
   return (
     <>

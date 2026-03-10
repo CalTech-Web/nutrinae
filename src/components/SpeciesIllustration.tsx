@@ -10,11 +10,11 @@ interface Annotation {
 }
 
 const illustrations: Record<string, string> = {
-  poultry: "/images/species/poultry-illustration.png",
-  swine: "/images/species/swine-illustration.png",
-  beef: "/images/species/beef-illustration.png",
-  dairy: "/images/species/dairy-illustration.png",
-  equine: "/images/species/equine-illustration.png",
+  poultry: "/images/species/poultry-illustration.webp",
+  swine: "/images/species/swine-illustration.webp",
+  beef: "/images/species/beef-illustration.webp",
+  dairy: "/images/species/dairy-illustration.webp",
+  equine: "/images/species/equine-illustration.webp",
 };
 
 const speciesAnnotations: Record<string, Annotation[]> = {

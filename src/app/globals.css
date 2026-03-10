@@ -34,3 +34,18 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
+@keyframes heroPulse {
+  0% { transform: scale(1); opacity: 0.4; }
+  75%, 100% { transform: scale(1.8); opacity: 0; }
+}
+
+@keyframes speciesPulse {
+  0% { transform: scale(1); opacity: 0.4; }
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes ping {
+  0% { transform: scale(1); opacity: 0.5; }
+  75%, 100% { transform: scale(2.2); opacity: 0; }
+}
+

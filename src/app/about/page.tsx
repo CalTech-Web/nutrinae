@@ -1,4 +1,10 @@
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "Learn about NUTRINAE — our history, mission, and commitment to science-based natural solutions for animal nutrition.",
+};
 
 export default function AboutPage() {
   return (

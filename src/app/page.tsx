@@ -7,7 +7,7 @@ const products = [
     name: "Ecodiar® Powder",
     slug: "ecodiar-powder",
     description: "Steam distilled Oregano essential oil for optimal gut health through the feed.",
-    image: "/images/products/Ecodiar-Powder-Product-Image.png",
+    image: "/images/products/Ecodiar-Powder-Product-Image.webp",
     badge: "OMRI Listed",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
@@ -17,7 +17,7 @@ const products = [
     name: "Ecodiar® Liquid",
     slug: "ecodiar-liquid",
     description: "Oregano essential oils and emulsifier for health benefits through drinking water.",
-    image: "/images/products/Ecodiar-Liquid-Product-Image.png",
+    image: "/images/products/Ecodiar-Liquid-Product-Image.webp",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
     ),
@@ -26,7 +26,7 @@ const products = [
     name: "NuQuil®",
     slug: "nuquil",
     description: "100% natural saponins from the Quillaja saponaria tree for immune support.",
-    image: "/images/products/Nuquil-Product-Image.png",
+    image: "/images/products/Nuquil-Product-Image.webp",
     badge: "Organic",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
@@ -36,7 +36,7 @@ const products = [
     name: "MYKOGEO®",
     slug: "mykogeo",
     description: "Natural clay with proprietary processing for feed flow and toxin mitigation.",
-    image: "/images/products/Mykogeo-Product-Image.png",
+    image: "/images/products/Mykogeo-Product-Image.webp",
     badge: "OMRI Listed",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" /></svg>
@@ -46,7 +46,7 @@ const products = [
     name: "MYKOGEO® Plus",
     slug: "mykogeo-plus",
     description: "Blend of clay and organic plant compounds for targeted toxin mitigation.",
-    image: "/images/products/Mykogeo-Plus-Product-Image.png",
+    image: "/images/products/Mykogeo-Plus-Product-Image.webp",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
     ),
@@ -55,7 +55,7 @@ const products = [
     name: "HyTann",
     slug: "hytann",
     description: "Water-soluble polyphenol compounds from Chestnut tree for enhanced animal health.",
-    image: "/images/products/Hytann-Product-Image.png",
+    image: "/images/products/Hytann-Product-Image.webp",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
     ),
@@ -64,7 +64,7 @@ const products = [
     name: "NuBA",
     slug: "nuba",
     description: "Coated, highly concentrated calcium butyrate for gut integrity and balanced flora.",
-    image: "/images/products/NuBA-Product-Image.png",
+    image: "/images/products/NuBA-Product-Image.webp",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
     ),
@@ -103,11 +103,11 @@ const challenges = [
 ];
 
 const speciesList = [
-  { name: "Poultry", slug: "poultry", image: "/images/species/poultry-illustration.png", desc: "Enhancing poultry health and performance through scientifically formulated solutions for broilers, layers, and turkeys." },
-  { name: "Swine", slug: "swine", image: "/images/species/swine-illustration.png", desc: "Advancing swine well-being and productivity with solutions that support optimal growth and immune function." },
-  { name: "Beef", slug: "beef", image: "/images/species/beef-illustration.png", desc: "Tailored nutritional solutions to ensure your cattle receive the essential support needed for optimal growth." },
-  { name: "Dairy", slug: "dairy", image: "/images/species/dairy-illustration.png", desc: "Supporting overall dairy herd health and productivity with solutions designed for their specific needs." },
-  { name: "Equine", slug: "equine", image: "/images/species/equine-illustration.png", desc: "Specialized products to support horse health, enhance performance, and promote overall well-being." },
+  { name: "Poultry", slug: "poultry", image: "/images/species/poultry-illustration.webp", desc: "Enhancing poultry health and performance through scientifically formulated solutions for broilers, layers, and turkeys." },
+  { name: "Swine", slug: "swine", image: "/images/species/swine-illustration.webp", desc: "Advancing swine well-being and productivity with solutions that support optimal growth and immune function." },
+  { name: "Beef", slug: "beef", image: "/images/species/beef-illustration.webp", desc: "Tailored nutritional solutions to ensure your cattle receive the essential support needed for optimal growth." },
+  { name: "Dairy", slug: "dairy", image: "/images/species/dairy-illustration.webp", desc: "Supporting overall dairy herd health and productivity with solutions designed for their specific needs." },
+  { name: "Equine", slug: "equine", image: "/images/species/equine-illustration.webp", desc: "Specialized products to support horse health, enhance performance, and promote overall well-being." },
 ];
 
 export default function Home() {

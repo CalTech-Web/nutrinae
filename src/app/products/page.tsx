@@ -1,5 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Products",
+  description: "Explore NUTRINAE's science-based natural products for animal nutrition — essential oils, saponins, clays, tannins, and more.",
+};
 
 const products = [
   {
@@ -7,7 +13,7 @@ const products = [
     slug: "ecodiar-powder",
     tagline: "Oregano Essential Oil for Optimal Animal Gut Health Through the Feed",
     description: "A steam distilled essential oil of the Oregano plant (Origanum vulgare ssp. hirtum) naturally selected to contain the optimum balance of phenols such as Carvacrol and Thymol.",
-    image: "/images/products/Ecodiar-Powder-Product-Image.png",
+    image: "/images/products/Ecodiar-Powder-Product-Image.webp",
     badge: "OMRI Listed",
   },
   {
@@ -15,14 +21,14 @@ const products = [
     slug: "ecodiar-liquid",
     tagline: "Oregano Essential Oil for Optimal Animal Gut Health Through the Drinking Water",
     description: "A unique combination of Oregano essential oils and an emulsifier to deliver optimal health benefits through the water.",
-    image: "/images/products/Ecodiar-Liquid-Product-Image.png",
+    image: "/images/products/Ecodiar-Liquid-Product-Image.webp",
   },
   {
     name: "NuQuil®",
     slug: "nuquil",
     tagline: "Pure Saponins for Improved Protozoa Mitigation and Immune System Support",
     description: "100% natural saponins derived from the Quillaja saponaria molina tree. Rich in triterpenoid saponins, glycol-components, tannins, antioxidants and polyphenols.",
-    image: "/images/products/Nuquil-Product-Image.png",
+    image: "/images/products/Nuquil-Product-Image.webp",
     badge: "Organic",
   },
   {
@@ -30,7 +36,7 @@ const products = [
     slug: "mykogeo",
     tagline: "Naturally Extracted Clay for Optimal Feed Flow and Immune System Support",
     description: "100% Attapulgite clay produced through a proprietary technology to increase its surface area and absorption capacity.",
-    image: "/images/products/Mykogeo-Product-Image.png",
+    image: "/images/products/Mykogeo-Product-Image.webp",
     badge: "OMRI Listed",
   },
   {
@@ -38,21 +44,21 @@ const products = [
     slug: "mykogeo-plus",
     tagline: "Proprietary Blend of Clay and Organic Plant Compounds for Targeted Toxin Mitigation",
     description: "A blend of Attapulgite clay and organic compounds formulated to target specific toxins produced by fungi.",
-    image: "/images/products/Mykogeo-Plus-Product-Image.png",
+    image: "/images/products/Mykogeo-Plus-Product-Image.webp",
   },
   {
     name: "HyTann",
     slug: "hytann",
     tagline: "Water-Soluble Polyphenol Compounds for Enhanced Animal Health",
     description: "100% natural hydrolysable tannins derived from the Chestnut castanea sativa tree. Rich in tannic acid. No preservatives or carriers.",
-    image: "/images/products/Hytann-Product-Image.png",
+    image: "/images/products/Hytann-Product-Image.webp",
   },
   {
     name: "NuBA",
     slug: "nuba",
     tagline: "Coated, Highly Concentrated Calcium Butyrate",
     description: "Contains at least 65% butyric acid. Stimulates gut integrity and helps maintain balanced intestinal flora.",
-    image: "/images/products/NuBA-Product-Image.png",
+    image: "/images/products/NuBA-Product-Image.webp",
   },
 ];
 

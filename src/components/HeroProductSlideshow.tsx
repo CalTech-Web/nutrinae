@@ -15,37 +15,37 @@ const allSpecies = [
 const products = [
   {
     name: "Ecodiar® Powder",
-    image: "/images/products/Ecodiar-Powder-Product-Image.png",
+    image: "/images/products/Ecodiar-Powder-Product-Image.webp",
     species: [0, 1, 2, 3, 4], // All species
   },
   {
     name: "Ecodiar® Liquid",
-    image: "/images/products/Ecodiar-Liquid-Product-Image.png",
+    image: "/images/products/Ecodiar-Liquid-Product-Image.webp",
     species: [0, 1, 2, 3], // Poultry, Swine, Beef, Dairy (no Equine per live site)
   },
   {
     name: "NuQuil®",
-    image: "/images/products/Nuquil-Product-Image.png",
+    image: "/images/products/Nuquil-Product-Image.webp",
     species: [0, 1, 2, 3, 4], // All species
   },
   {
     name: "MYKOGEO®",
-    image: "/images/products/Mykogeo-Product-Image.png",
+    image: "/images/products/Mykogeo-Product-Image.webp",
     species: [0, 1, 2, 3, 4], // All species
   },
   {
     name: "MYKOGEO® Plus",
-    image: "/images/products/Mykogeo-Plus-Product-Image.png",
+    image: "/images/products/Mykogeo-Plus-Product-Image.webp",
     species: [0, 1, 2, 3, 4], // All species
   },
   {
     name: "HyTann",
-    image: "/images/products/Hytann-Product-Image.png",
+    image: "/images/products/Hytann-Product-Image.webp",
     species: [0, 1, 2, 3, 4], // All species (monogastric + ruminant)
   },
   {
     name: "NuBA",
-    image: "/images/products/NuBA-Product-Image.png",
+    image: "/images/products/NuBA-Product-Image.webp",
     species: [0, 1, 2, 3, 4], // All species
   },
 ];
