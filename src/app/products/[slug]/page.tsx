@@ -3,11 +3,11 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 const speciesList = [
-  { name: "Poultry", slug: "poultry", icon: "/images/species/poultry-icon.png" },
-  { name: "Swine", slug: "swine", icon: "/images/species/swine-icon.png" },
-  { name: "Beef", slug: "beef", icon: "/images/species/beef-icon.png" },
-  { name: "Dairy", slug: "dairy", icon: "/images/species/dairy-icon.png" },
-  { name: "Equine", slug: "equine", icon: "/images/species/equine-icon.png" },
+  { name: "Poultry", slug: "poultry", icon: "/images/species/poultry-illustration.png" },
+  { name: "Swine", slug: "swine", icon: "/images/species/swine-illustration.png" },
+  { name: "Beef", slug: "beef", icon: "/images/species/beef-illustration.png" },
+  { name: "Dairy", slug: "dairy", icon: "/images/species/dairy-illustration.png" },
+  { name: "Equine", slug: "equine", icon: "/images/species/equine-illustration.png" },
 ];
 
 const productData: Record<string, {
@@ -254,7 +254,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               <div className="relative bg-gradient-to-br from-accent to-dark rounded-lg p-8 text-center overflow-hidden">
                 <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
                 <div className="relative">
-                  <h3 className="text-white font-bold font-heading text-lg mb-2">Interested in {product.name}?</h3>
+                  <h3 className="font-bold font-heading text-lg mb-2" style={{ color: '#ffffff' }}>Interested in {product.name}?</h3>
                   <p className="text-white/70 text-sm mb-5">Get in touch with our team for detailed product information.</p>
                   <Link href="/contact" className="bg-white text-accent px-6 py-3 rounded-[0.3rem] text-[13px] font-bold uppercase tracking-wide hover:bg-accent-50 transition-colors inline-flex items-center gap-2 shadow-[0_2px_8px_rgba(0,0,0,0.15)]">
                     Request Info
