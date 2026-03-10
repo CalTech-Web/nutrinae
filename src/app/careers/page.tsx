@@ -1,22 +1,15 @@
-import Image from "next/image";
-
 export default function CareersPage() {
   return (
     <>
-      <section className="relative bg-accent text-white py-28 px-4 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image src="/images/about/hero-1.png" alt="" fill className="object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-dark via-accent/90 to-accent-light/50" />
-        </div>
-        <div className="absolute bottom-0 right-0 w-[50%] h-[30%] bg-gradient-to-tl from-white/10 to-transparent rounded-tl-[80px]" />
+      <section className="relative bg-white py-28 px-4 overflow-hidden">
         <div className="relative max-w-[1200px] mx-auto">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-[3px] bg-white" />
-              <span className="text-white font-bold text-sm uppercase tracking-wider">Join Our Team</span>
+              <div className="w-12 h-[3px] bg-accent" />
+              <span className="text-accent font-bold text-sm uppercase tracking-wider">Join Our Team</span>
             </div>
-            <h1 className="text-4xl md:text-[48px] font-bold leading-[1.2] font-heading tracking-[-0.02em]">Careers</h1>
-            <p className="text-xl text-white/80 mt-4">Join our growing team</p>
+            <h1 className="text-4xl md:text-[48px] font-bold leading-[1.2] font-heading tracking-[-0.02em] text-primary">Careers</h1>
+            <p className="text-xl text-body mt-4">Join our growing team</p>
           </div>
         </div>
       </section>
@@ -72,32 +65,43 @@ export default function CareersPage() {
             </div>
 
             <div className="lg:col-span-1 space-y-6">
-              <div className="bg-accent rounded-[0.3rem] p-8">
-                <h3 className="text-white font-bold font-heading text-lg mb-6">What We Offer</h3>
-                <div className="space-y-4">
-                  {[
-                    "Opportunities for advancement",
-                    "Openness to new ideas",
-                    "New challenges & opportunities",
-                    "Competitive benefits package",
-                  ].map((item) => (
-                    <div key={item} className="flex items-center gap-3">
-                      <div className="w-6 h-6 bg-white/20 rounded-[0.2rem] flex items-center justify-center flex-shrink-0">
-                        <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+              <div className="relative bg-gradient-to-br from-accent to-dark rounded-lg p-8 overflow-hidden">
+                <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
+                <div className="relative">
+                  <h3 className="font-bold font-heading text-lg mb-6" style={{ color: '#ffffff' }}>What We Offer</h3>
+                  <div className="space-y-4">
+                    {[
+                      { text: "Opportunities for advancement", icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg> },
+                      { text: "Openness to new ideas", icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg> },
+                      { text: "New challenges & opportunities", icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" /></svg> },
+                      { text: "Competitive benefits package", icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg> },
+                    ].map((item) => (
+                      <div key={item.text} className="flex items-center gap-3">
+                        <div className="w-8 h-8 bg-white/15 rounded-lg flex items-center justify-center flex-shrink-0 text-white">
+                          {item.icon}
+                        </div>
+                        <span className="text-white/90 text-sm font-medium">{item.text}</span>
                       </div>
-                      <span className="text-white/80 text-sm font-medium">{item}</span>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              <div className="bg-accent rounded-[0.3rem] p-8">
-                <p className="text-white leading-relaxed text-sm">
-                  If you are interested in applying for any of our roles, please submit your application/resume
-                  to <a href="mailto:jobs@nutrinae.com" className="font-bold underline">jobs@nutrinae.com</a> and
-                  a member of our hiring team will review your application. Even if you don&apos;t feel like your
-                  qualifications match, please don&apos;t hesitate to apply!
-                </p>
+              <div className="relative bg-gradient-to-br from-accent to-dark rounded-lg p-8 overflow-hidden">
+                <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
+                <div className="relative">
+                  <div className="w-10 h-10 bg-white/15 rounded-lg flex items-center justify-center mb-4">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                  </div>
+                  <p className="text-white/90 leading-relaxed text-sm mb-5">
+                    If you are interested in applying for any of our roles, please submit your application/resume
+                    to <a href="mailto:jobs@nutrinae.com" className="font-bold text-white underline underline-offset-2">jobs@nutrinae.com</a> and
+                    a member of our hiring team will review your application.
+                  </p>
+                  <p className="text-white/70 text-sm italic">
+                    Even if you don&apos;t feel like your qualifications match, please don&apos;t hesitate to apply!
+                  </p>
+                </div>
               </div>
             </div>
           </div>
