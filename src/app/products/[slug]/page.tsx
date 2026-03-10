@@ -155,11 +155,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               <h1 className="text-4xl md:text-[48px] font-bold leading-[1.2] font-heading tracking-[-0.02em] text-primary">{product.name}</h1>
               <p className="text-body text-lg mt-3 max-w-xl">{product.tagline}</p>
             </div>
-            {product.badge && (
-              <span className="bg-accent text-white text-[12px] font-bold uppercase px-4 py-2 rounded-[0.2rem] tracking-wide">
-                {product.badge}
-              </span>
-            )}
           </div>
         </div>
       </section>
