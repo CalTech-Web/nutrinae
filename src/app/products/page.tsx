@@ -52,32 +52,28 @@ const products = [
     slug: "nuba",
     tagline: "Coated, Highly Concentrated Calcium Butyrate",
     description: "Contains at least 65% butyric acid. Stimulates gut integrity and helps maintain balanced intestinal flora.",
+    image: "/images/products/NuBA-Product-Image.png",
   },
 ];
 
 export default function ProductsPage() {
   return (
     <>
-      <section className="relative bg-accent text-white py-28 px-4 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image src="/images/about/hero-1.png" alt="" fill className="object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-dark via-accent/90 to-accent-light/50" />
-        </div>
-        <div className="absolute bottom-0 right-0 w-[50%] h-[30%] bg-gradient-to-tl from-white/10 to-transparent rounded-tl-[80px]" />
+      <section className="relative bg-white py-28 px-4 overflow-hidden">
         <div className="relative max-w-[1200px] mx-auto">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-[3px] bg-white" />
-              <span className="text-white font-bold text-sm uppercase tracking-wider">Our Solutions</span>
+              <div className="w-12 h-[3px] bg-accent" />
+              <span className="text-accent font-bold text-sm uppercase tracking-wider">Our Solutions</span>
             </div>
-            <h1 className="text-4xl md:text-[48px] font-bold leading-[1.2] font-heading tracking-[-0.02em]">Our Products</h1>
-            <p className="text-xl text-white/80 mt-4">Science-based natural solutions for animal nutrition</p>
+            <h1 className="text-4xl md:text-[48px] font-bold leading-[1.2] font-heading tracking-[-0.02em] text-primary">Our Products</h1>
+            <p className="text-xl text-body mt-4">Science-based natural solutions for animal nutrition</p>
           </div>
         </div>
       </section>
 
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((product) => (
             <Link
               key={product.slug}
@@ -85,7 +81,7 @@ export default function ProductsPage() {
               className="group bg-white border border-border rounded-[0.3rem] overflow-hidden hover:shadow-[0_5px_15px_rgba(0,0,0,0.15)] hover:border-accent transition-all flex flex-col"
             >
               {product.image && (
-                <div className="relative h-52 bg-light-bg">
+                <div className="relative h-52 bg-white">
                   <Image src={product.image} alt={product.name} fill className="object-contain p-6" />
                   {product.badge && (
                     <span className="absolute top-3 right-3 bg-accent text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-[0.2rem]">
