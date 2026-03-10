@@ -2,6 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+const speciesList = [
+  { name: "Poultry", slug: "poultry", icon: "/images/species/poultry-icon.png" },
+  { name: "Swine", slug: "swine", icon: "/images/species/swine-icon.png" },
+  { name: "Beef", slug: "beef", icon: "/images/species/beef-icon.png" },
+  { name: "Dairy", slug: "dairy", icon: "/images/species/dairy-icon.png" },
+  { name: "Equine", slug: "equine", icon: "/images/species/equine-icon.png" },
+];
+
 const productData: Record<string, {
   name: string;
   tagline: string;
@@ -11,6 +19,7 @@ const productData: Record<string, {
   image?: string;
   badgeImage?: string;
   technicalBulletins?: string[];
+  species: string[];
 }> = {
   "ecodiar-powder": {
     name: "Ecodiar® Powder",
@@ -30,6 +39,7 @@ const productData: Record<string, {
       "Oregano-based feed additive as an alternative approach to reduce Salmonella in poultry",
       "Growth Performance, Carcass Characteristics and Economic Parameters Comparison between Medicated and Antibiotics Free Programs in Wean-to-Finish Pigs",
     ],
+    species: ["poultry", "swine", "beef", "dairy", "equine"],
   },
   "ecodiar-liquid": {
     name: "Ecodiar® Liquid",
@@ -47,6 +57,7 @@ const productData: Record<string, {
       "Growth Performance, Carcass Characteristics and Economic Parameters Comparison between Medicated and Antibiotics Free Programs in Wean-to-Finish Pigs",
       "Effect of Ecodiar® liquid during lactation on piglets pre-wean mortality and pigs weaned per sow",
     ],
+    species: ["poultry", "swine", "beef", "dairy", "equine"],
   },
   "nuquil": {
     name: "NuQuil®",
@@ -63,6 +74,7 @@ const productData: Record<string, {
     technicalBulletins: [
       "Growth Performance, Carcass Characteristics and Economic Parameters Comparison between Medicated and Antibiotics Free Programs in Wean-to-Finish Pigs",
     ],
+    species: ["poultry", "swine", "beef", "dairy", "equine"],
   },
   "mykogeo": {
     name: "MYKOGEO®",
@@ -75,6 +87,7 @@ const productData: Record<string, {
       "One of the larger absorption molecules when compared to other minerals, producing drier litters in poultry and livestock animals",
       "Mitigates the adverse effects of toxins produced by fungi",
     ],
+    species: ["poultry", "swine", "beef", "dairy", "equine"],
   },
   "mykogeo-plus": {
     name: "MYKOGEO® Plus",
@@ -85,6 +98,7 @@ const productData: Record<string, {
       "One of the larger absorption molecules when compared to other minerals, producing drier litters in poultry and livestock animals",
       "Mitigate the negative effects of specific toxins produced by fungi",
     ],
+    species: ["poultry", "swine", "beef", "dairy", "equine"],
   },
   "hytann": {
     name: "HyTann",
@@ -96,11 +110,13 @@ const productData: Record<string, {
       "Helps support the immune system against inflammation, bacteria and viruses",
       "Tannic acid chelates (high affinity) with iron which is essential for most pathogenic bacteria",
     ],
+    species: ["poultry", "swine", "beef", "dairy", "equine"],
   },
   "nuba": {
     name: "NuBA",
     tagline: "COATED, HIGHLY CONCENTRATED CALCIUM BUTYRATE",
     description: "Contains at least 65% butyric acid.",
+    image: "/images/products/NuBA-Product-Image.png",
     benefits: [
       "Stimulates gut integrity",
       "Helps maintain a balanced intestinal flora",
@@ -109,6 +125,7 @@ const productData: Record<string, {
     technicalBulletins: [
       "Growth Performance, Carcass Characteristics and Economic Parameters Comparison between Medicated and Antibiotics Free Programs in Wean-to-Finish Pigs",
     ],
+    species: ["poultry", "swine", "beef", "dairy", "equine"],
   },
 };
 
@@ -123,21 +140,23 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
   return (
     <>
-      <section className="relative bg-accent text-white py-24 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-dark via-accent/90 to-accent-light/50" />
-        <div className="absolute bottom-0 right-0 w-[40%] h-[40%] bg-gradient-to-tl from-white/10 to-transparent rounded-tl-[80px]" />
+      <section className="relative bg-white py-24 px-4 overflow-hidden">
         <div className="relative max-w-[1200px] mx-auto">
-          <Link href="/products" className="text-white/70 hover:text-white text-sm font-bold uppercase tracking-wide mb-6 inline-flex items-center gap-2 transition-colors">
+          <Link href="/products" className="text-body hover:text-accent text-sm font-bold uppercase tracking-wide mb-6 inline-flex items-center gap-2 transition-colors">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
             All Products
           </Link>
           <div className="flex items-start justify-between flex-wrap gap-6">
             <div>
-              <h1 className="text-4xl md:text-[48px] font-bold leading-[1.2] font-heading tracking-[-0.02em] text-white">{product.name}</h1>
-              <p className="text-white/70 text-lg mt-3 max-w-xl">{product.tagline}</p>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-[3px] bg-accent" />
+                <span className="text-accent font-bold text-sm uppercase tracking-wider">Product Details</span>
+              </div>
+              <h1 className="text-4xl md:text-[48px] font-bold leading-[1.2] font-heading tracking-[-0.02em] text-primary">{product.name}</h1>
+              <p className="text-body text-lg mt-3 max-w-xl">{product.tagline}</p>
             </div>
             {product.badge && (
-              <span className="bg-white text-accent text-[12px] font-bold uppercase px-4 py-2 rounded-[0.2rem] tracking-wide">
+              <span className="bg-accent text-white text-[12px] font-bold uppercase px-4 py-2 rounded-[0.2rem] tracking-wide">
                 {product.badge}
               </span>
             )}
@@ -186,30 +205,74 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
             <div className="lg:col-span-1 space-y-6">
               {product.image && (
-                <div className="bg-light-bg border border-border rounded-[0.3rem] p-8">
+                <div className="bg-white border border-border rounded-[0.3rem] p-8">
                   <div className="relative h-64">
                     <Image src={product.image} alt={product.name} fill className="object-contain" />
                   </div>
                 </div>
               )}
               {product.badgeImage && (
-                <div className="bg-light-bg border border-border rounded-[0.3rem] p-6">
+                <div className="bg-white border border-border rounded-[0.3rem] p-6">
                   <div className="relative h-28">
                     <Image src={product.badgeImage} alt={product.badge || "Certification"} fill className="object-contain" />
                   </div>
                 </div>
               )}
-              <div className="bg-accent rounded-[0.3rem] p-6 text-center">
-                <h3 className="text-white font-bold font-heading mb-3">Interested in {product.name}?</h3>
-                <Link href="/contact" className="bg-accent text-white px-6 py-3 rounded-[0.2rem] text-[13px] font-bold uppercase tracking-wide hover:bg-accent-light transition-colors inline-flex items-center gap-2">
-                  Request Info
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                </Link>
+
+              {/* Species */}
+              <div className="border border-border rounded-[0.3rem] p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-8 h-[3px] bg-accent" />
+                  <span className="text-accent font-bold text-xs uppercase tracking-wider">Species</span>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {product.species
+                    .map((s) => speciesList.find((sp) => sp.slug === s))
+                    .filter(Boolean)
+                    .map((sp, i) => (
+                      <Link
+                        key={sp!.slug}
+                        href={`/species/${sp!.slug}`}
+                        className="group relative flex flex-col items-center gap-1.5"
+                      >
+                        <div className="relative w-14 h-14 rounded-full bg-accent-50 flex items-center justify-center overflow-hidden">
+                          <div
+                            className="absolute inset-0 rounded-full bg-accent/20"
+                            style={{ animation: `speciesPulse 2s ease-out infinite ${i * 0.3}s` }}
+                          />
+                          <Image src={sp!.icon} alt={sp!.name} width={36} height={36} className="object-contain relative z-10" />
+                        </div>
+                        <span className="text-[10px] font-bold text-body group-hover:text-accent transition-colors uppercase tracking-wide">
+                          {sp!.name}
+                        </span>
+                      </Link>
+                    ))}
+                </div>
+              </div>
+
+              {/* CTA */}
+              <div className="relative bg-gradient-to-br from-accent to-dark rounded-lg p-8 text-center overflow-hidden">
+                <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
+                <div className="relative">
+                  <h3 className="text-white font-bold font-heading text-lg mb-2">Interested in {product.name}?</h3>
+                  <p className="text-white/70 text-sm mb-5">Get in touch with our team for detailed product information.</p>
+                  <Link href="/contact" className="bg-white text-accent px-6 py-3 rounded-[0.3rem] text-[13px] font-bold uppercase tracking-wide hover:bg-accent-50 transition-colors inline-flex items-center gap-2 shadow-[0_2px_8px_rgba(0,0,0,0.15)]">
+                    Request Info
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <style>{`
+        @keyframes speciesPulse {
+          0% { transform: scale(1); opacity: 0.4; }
+          75%, 100% { transform: scale(1.8); opacity: 0; }
+        }
+      `}</style>
     </>
   );
 }
