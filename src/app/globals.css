@@ -49,3 +49,8 @@ h1, h2, h3, h4, h5, h6 {
   75%, 100% { transform: scale(2.2); opacity: 0; }
 }
 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+

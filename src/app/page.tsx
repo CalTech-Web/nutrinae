@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import HeroProductSlideshow from "@/components/HeroProductSlideshow";
 import StatsSection from "@/components/StatsSection";
+import TrustBar from "@/components/TrustBar";
 
 const products = [
   {
@@ -153,6 +154,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <TrustBar />
 
       {/* Challenges Section */}
       <section className="py-20 px-4 bg-light-bg relative overflow-hidden">
