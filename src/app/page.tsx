@@ -3,6 +3,7 @@ import Image from "next/image";
 import HeroProductSlideshow from "@/components/HeroProductSlideshow";
 import StatsSection from "@/components/StatsSection";
 import TrustBar from "@/components/TrustBar";
+import RevealGrid from "@/components/RevealGrid";
 
 const products = [
   {
@@ -175,7 +176,7 @@ export default function Home() {
               We address the most pressing challenges in animal nutrition with proven, natural solutions.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <RevealGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {challenges.map((c, idx) => (
               <div key={c.title} className="group relative bg-white rounded-[0.3rem] p-8 text-center shadow-[0_2px_8px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_24px_rgba(46,125,50,0.15)] hover:-translate-y-1 transition-all duration-300">
                 {/* Green top accent bar */}
@@ -191,7 +192,7 @@ export default function Home() {
                 <p className="text-body text-sm leading-relaxed">{c.desc}</p>
               </div>
             ))}
-          </div>
+          </RevealGrid>
         </div>
       </section>
 
@@ -206,7 +207,7 @@ export default function Home() {
             </div>
             <h2 className="text-3xl md:text-[32px] font-bold font-heading">Our Products</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <RevealGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" stagger={65}>
             {products.map((product) => (
               <Link
                 key={product.slug}
@@ -232,7 +233,7 @@ export default function Home() {
                 </div>
               </Link>
             ))}
-          </div>
+          </RevealGrid>
         </div>
       </section>
 
@@ -250,7 +251,7 @@ export default function Home() {
               Tailored nutritional programs backed by science for every species.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          <RevealGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {speciesList.map((s) => (
               <Link
                 key={s.slug}
@@ -288,7 +289,7 @@ export default function Home() {
                 </div>
               </Link>
             ))}
-          </div>
+          </RevealGrid>
         </div>
       </section>
 
