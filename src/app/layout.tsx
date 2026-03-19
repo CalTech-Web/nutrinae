@@ -18,6 +18,7 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nutrinae.com"),
+  verification: { google: "R6OI8nrejYrX0XmdRFUDivkOX0mfWLrMonCgRg4ZRaU" },
   title: {
     default: "NutriNae - Science-Based Nutritional Solutions for Animal Health",
     template: "%s | NutriNae",
